@@ -21,61 +21,65 @@
     return $db;
   }
 
-  /**
-   * Function to get all people
-   * @return array|false
-   */
-  function dbSelectPeople($db)
-  {
-    try
-    {
-      $request = 'SELECT * FROM subscribe';
-      $statement = $db->query($request);
-      $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-    }
-    catch (PDOException $exception)
-    {
-      error_log('Request error: '.$exception->getMessage());
-      return false;
-    }
-    return $result;
-  }
 
-  function dbAddSubscriber($db, $firstname, $lastname)
-  {
-    try
-    {
-      $request = 'INSERT INTO subscribe VALUES(default, :firstname , :lastname)';
-      $statement = $db->prepare($request);
-      $statement->bindParam(':firstname', $firstname, PDO::PARAM_STR, 20);
-      $statement->bindParam(':lastname', $lastname, PDO::PARAM_STR, 20);
-      $statement->execute();
-    }
-    catch (PDOException $exception)
-    {
-      error_log('Request error: '.$exception->getMessage());
-      return false;
+////////////////
+// Connection //
+////////////////
+
+
+/**
+ * Insert an user into database.
+ * @return true|false
+ */
+
+function insertUser($db, $email, $password, $capacity_tank_l, $pressure_tank){
+    $password_hash = password_hash($password, PASSWORD_DEFAULT);
+    try {
+        $statement = $db->prepare('INSERT INTO user (email, password, capacity_tank_l, pressure_tank) SELECT :email::VARCHAR, :pwd, :cap, :pressure WHERE NOT EXISTS (SELECT 1 FROM user WHERE email=:email);');
+        $statement->bindParam(':email', $email);
+        $statement->bindParam(':pwd', $password_hash);
+        $statement->bindParam(':cap', $capacity_tank_l);
+        $statement->bindParam(':pressure', $pressure_tank);
+        $statement->execute();
+    } catch (PDOException $exception) {
+        echo 'Request error :'.$exception->getMessage();
+        return false;
     }
     return true;
-  }
+}
 
-  function dbDeleteSubscriber($db, $firstname, $lastname)
-  {
-    try
-    {
-      $request = 'DELETE FROM tweets WHERE lastname=:lastname AND firstname=:firstname';
-      $statement = $db->prepare($request);
-      $statement->bindParam(':lastname', $id, PDO::PARAM_INT);
-      $statement->bindParam(':firstname', $firstname, PDO::PARAM_STR, 20);
-      $statement->execute();
+/**
+ * Check if a client can connect.
+ * @return true|false
+ */
+
+function canConnect($db, $email, $password){
+    try {
+        $statement = $db->prepare('SELECT password FROM user WHERE email=:email');
+        $statement->bindParam(':email', $email);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        if(password_verify($password, $result['password'])){
+            return true;
+        }
+        else {
+            return false;
+        }
+    } catch (PDOException $e) {
+        echo 'Request error :'.$e->getMessage();
+        return false;
     }
-    catch (PDOException $exception)
-    {
-      error_log('Request error: '.$exception->getMessage());
-      return false;
-    }
-    return true;
-  }
+}
+
+  
+/////////////
+// Profile //
+/////////////
 
 
-?>
+
+
+
+
+
+
