@@ -3,7 +3,7 @@ require_once('database.php');
 
 $data = null;
 
-// Database connection.
+// Database connection.zeddzec
 $db = dbConnect();
 if (!$db)
 {
