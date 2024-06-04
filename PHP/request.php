@@ -3,7 +3,6 @@ require_once('database.php');
 
 $data = null;
 
-// Database connection.zeddzec
 $db = dbConnect();
 if (!$db)
 {
@@ -16,31 +15,16 @@ $request = substr($_SERVER['PATH_INFO'], 1);
 $request = explode('/', $request);
 $requestRessource = array_shift($request);
 
-// Polls request.
-if ($requestRessource == 'subscribe')
+if ($requestRessource == 'signing_up')
 {
-  $id = array_shift($request);
-    if ($id == '')
-      $id = NULL;
-    $data = false;
-
-    if ($requestMethod == 'GET')
-    {
-      $data = dbSelectPeople($db);
-    }
-    else if($requestMethod == 'POST')
-    {
-      $firstname = $_POST["firstname"];
-      $lastname = $_POST["lastname"];
-      $data = dbAddSubscriber($db, $firstname, $lastname);
-    }
-    else if($requestMethod == 'DELETE')
-    {
-      $firstname = $_GET["firstname"];
-      $lastname = $_GET["lastname"];
-      $data = dbDeleteSubscriber($db, $firstname, $lastname);
-
-    }
+  if($requestMethod == 'POST')
+  {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $capacity_tank_l = 0;
+    $pressure_tank = 0;
+    $data = insertUser($db, $email, $password, $capacity_tank_l, $pressure_tank);
+  }
 }
 
 // Send result.
