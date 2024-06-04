@@ -38,7 +38,7 @@
             <button type="button" id="defaultSettings" class="bg-blue-700 text-white rounded-md px-5 py-3 text-sm font-medium hover:bg-blue-500 rounded-md px-3 py-2 text-sm font-medium">Default settings</button>
             <button type="button" id="divingProfiles" class="bg-blue-200 text-blue-700 rounded-md px-5 py-3 text-sm font-medium hover:bg-blue-100 rounded-md px-3 py-2 text-sm font-medium">My diving profiles</button>
         </div>
-        <div id="defaultSettingsDiv" style="display: block;">
+        <div id="defaultSettingsDiv" style="display: none;">
           <div class="mx-auto max-w-7xl py-24 sm:px-6 sm:py-30 lg:px-8">
             <div class="relative isolate overflow-hidden bg-blue-100 px-6 pt-8 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
               <div class="divide-y-4 divide-gray-500 mx-auto text-center lg:mx-0 lg:flex-auto lg:py-4">
@@ -56,40 +56,38 @@
           </div>
         </div>
 
-        <div id="divingProfilesDiv" style="display: none;">
-          <div id="table-wrapper" style="position:relative;position:absolute;   
-          top:-20px;
-          z-index:2;
-          height:20px;
-          width:35%;
-          border:1px solid red;">
-            <div id="table-scroll" style="height:150px;overflow:auto;margin-top:20px">
-              <table>
-                  <thead>
-                      <tr>
-                          <th><span class="text">A</span></th>
-                          <th><span class="text">B</span></th>
-                          <th><span class="text">C</span></th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                    <tr> <td>1, 0</td> <td>2, 0</td> <td>3, 0</td> </tr>
-                    <tr> <td>1, 1</td> <td>2, 1</td> <td>3, 1</td> </tr>
-                    <tr> <td>1, 2</td> <td>2, 2</td> <td>3, 2</td> </tr>
-                    <tr> <td>1, 3</td> <td>2, 3</td> <td>3, 3</td> </tr>
-                    <tr> <td>1, 4</td> <td>2, 4</td> <td>3, 4</td> </tr>
-                    <tr> <td>1, 5</td> <td>2, 5</td> <td>3, 5</td> </tr>
-                    <tr> <td>1, 6</td> <td>2, 6</td> <td>3, 6</td> </tr>
-                    <tr> <td>1, 7</td> <td>2, 7</td> <td>3, 7</td> </tr>
-                    <tr> <td>1, 8</td> <td>2, 8</td> <td>3, 8</td> </tr>
-                    <tr> <td>1, 9</td> <td>2, 9</td> <td>3, 9</td> </tr>
-                    <tr> <td>1, 10</td> <td>2, 10</td> <td>3, 10</td> </tr>
-                    <!-- etc... -->
-                    <tr> <td>1, 99</td> <td>2, 99</td> <td>3, 99</td> </tr>
-                  </tbody>
-              </table>
+        <div id="divingProfilesDiv" style="display: block;">
+            <div class="mx-auto max-w-7xl py-24 sm:px-6 sm:py-30 lg:px-8">
+                <div style="overflow-x: hidden;overflow-y: auto;height: 300px;" class="divide-y-4 divide-gray-400 isolate bg-blue-100 shadow-2xl sm:rounded-3xl lg:px-24">
+                    <div class="mx-auto text-center py-4">
+                        <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Duration : 2h</span>
+                        <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Depth : 5m</span>
+                        <button type="button" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Select Profile</button>
+                    </div>
+                    <div class="mx-auto text-center py-4">
+                        <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Duration : 2h</span>
+                        <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Depth : 5m</span>
+                        <button type="button" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Select Profile</button>
+                    </div><div class="mx-auto text-center py-4">
+                        <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Duration : 2h</span>
+                        <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Depth : 5m</span>
+                        <button type="button" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Select Profile</button>
+                    </div><div class="mx-auto text-center py-4">
+                        <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Duration : 2h</span>
+                        <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Depth : 5m</span>
+                        <button type="button" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Select Profile</button>
+                    </div><div class="mx-auto text-center py-4">
+                        <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Duration : 2h</span>
+                        <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Depth : 5m</span>
+                        <button type="button" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Select Profile</button>
+                    </div>
+                </div>
             </div>
-          </div>
+        </div>
+        <div class="text-center">
+            <a href="new_profile.html">
+            <button type="button" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Generate new profile</button>
+            </a>
         </div>
 
 
