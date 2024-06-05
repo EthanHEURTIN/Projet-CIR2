@@ -20,5 +20,9 @@ session_destroy();
             <a href="sign_up.php" class="bg-blue-500 text-white my-5 rounded-md px-3 py-2 text-sm font-medium hover:bg-blue-700 rounded-md px-3 py-2 text-sm font-medium">S'inscrire</a>
             </div></div></div></div>
   </body>
-  <?php require("../components/footer.php")?>
+  <?php 
+  require("../components/footer.php");
+  header('Location: ' . $_SERVER['PHP_SELF']);
+  ?>
+  
 </html>

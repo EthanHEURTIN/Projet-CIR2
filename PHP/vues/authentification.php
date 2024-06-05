@@ -14,16 +14,14 @@ if(isset($_POST['email']) && isset($_POST['password'])){
     }
     if(canConnect($db, $email, $password)){
       $_SESSION['email'] = $email;
-      var_dump($_SESSION['email']);
-      echo '<script>alert("Connexion réussie");</script>';
       echo '<script>window.location.href = "confirmed_authentification.php";</script>';
     }
     else{
-      echo '<script>alert("Email ou mot de passe incorrect");</script>';
+      $error_connexion = 1;
     }
   }
   else{
-    echo '<script>alert("Veuillez remplir tous les champs");</script>';
+    $error_connexion = 0;
   }
 }
 ?>
@@ -43,6 +41,14 @@ if(isset($_POST['email']) && isset($_POST['password'])){
         <div class="px-4 py-5 sm:px-6">
           <h3 class="text-lg font-medium leading-6 text-gray-900">Connexion</h3>
           <p class="mt-1 max-w-2xl text-sm text-gray-500">Connectez-vous pour acc&#xE9;der aux profils de plong&#xE9;e.</p>
+          <?php
+          if($error_connexion == 1){
+            echo '<p class="mt-1 max-w-2xl text-sm text-red-500">Erreur de connexion, veuillez v&#xE9;rifier vos identifiants.</p>';
+          }
+          else if($error_connexion == 0){
+            echo '<p class="mt-1 max-w-2xl text-sm text-red-500">Veuillez remplir tous les champs.</p>';
+          }
+          ?>
         </div>
         <form method="post">
         <div class="border-t border-gray-200">

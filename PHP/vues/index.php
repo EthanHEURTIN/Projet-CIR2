@@ -9,11 +9,11 @@
   <body>
   <div class="container mx-auto">
     <h1 class="text-4xl text-center mt-10">Welcome to ProfilesYourDiving.fr</h1>
-    <h3 class="text-lg text-center mt-5 bg-indigo-800">Generate millions of diving profiles for your next diving projects.</h3>
+    <h3 class="text-xl text-center mt-5 text-indigo-800">Generate millions of diving profiles for your next diving projects.</h3>
   </div>
   <div class="text-center">
     <a href="new_profile.php">
-    <button type="button" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Generate new profile</button>
+    <button type="button" class="rounded-md bg-indigo-600 my-3 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Generate new profile</button>
     </a>
   </div>
   </body>
