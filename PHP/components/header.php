@@ -6,7 +6,7 @@
           </div>
           <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div class="flex flex-shrink-0 items-center">
-              <a href="index.html"><img class="h-20 w-auto" src="/img/Logo_Plongee.png" alt="Your Company"></a>
+              <a href="index.html"><img class="h-20 w-auto" src="../../img/Logo_Plongee.png" alt="Your Company"></a>
               <h3>ProfilPlong&#xE9;e</h3>
             </div>
           </div>
@@ -14,11 +14,11 @@
             <?php 
             if(isset($_SESSION['email'])){
               echo '<p class="text-gray-500 text-sm font-medium px-3 py-2 text-sm font-medium">Connecté en tant que '.$_SESSION['email'].'</p>';
-              echo '<a href="/PHP/vues/disconnect.php" class="bg-blue-500 text-white rounded-md px-3 py-2 text-sm font-medium hover:bg-blue-700 rounded-md px-3 py-2 text-sm font-medium">Déconnexion</a>';
-              echo '<a href="/PHP/vues/diving_profiles.php" class="bg-blue-500 text-white rounded-md px-3 py-2 text-sm font-medium hover:bg-blue-700 rounded-md px-3 py-2 text-sm font-medium">Profiles de plongée</a>';
+              echo '<a href="../vues/disconnect.php" class="bg-blue-500 text-white rounded-md px-3 py-2 text-sm font-medium hover:bg-blue-700 rounded-md px-3 py-2 text-sm font-medium">Déconnexion</a>';
+              echo '<a href="../vues/diving_profiles.php" class="bg-blue-500 text-white rounded-md px-3 py-2 text-sm font-medium hover:bg-blue-700 rounded-md px-3 py-2 text-sm font-medium">Profiles de plongée</a>';
             }
             else{
-              echo '<a href="/PHP/vues/authentification.php" class="bg-blue-500 text-white rounded-md px-3 py-2 text-sm font-medium hover:bg-blue-700 rounded-md px-3 py-2 text-sm font-medium">Connexion</a>';
+              echo '<a href="../vues/authentification.php" class="bg-blue-500 text-white rounded-md px-3 py-2 text-sm font-medium hover:bg-blue-700 rounded-md px-3 py-2 text-sm font-medium">Connexion</a>';
             }
             ?>
           </div>
