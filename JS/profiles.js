@@ -2,6 +2,16 @@ getdbMN90Line();
 
 function displayProfile(reponse){
 
+    console.log(reponse);
+
+    table = document.getElementById('table');
+    tableHTML = "";
+    nb_pallier = 0;
+    for (let i = 0; i < 5; i++) {
+        if(reponse[i+2] != null){
+            conteur++;
+        }
+    }
     
 
 /*
@@ -45,8 +55,8 @@ Plotly.newPlot("myPlot", data, layout);
 
 function getdbMN90Line(){
 
-    depth = document.getElementById('depth').value;
-    duration = document.getElementById('duration').value;
-    ajaxRequest('GET', '../request.php/dbMN90Line', displayProfile, "Depth="+depth + "Duration="+duration);
+    depth = document.getElementById("depth").getAttribute('value');
+    duration = document.getElementById("duration").getAttribute('value');
+    ajaxRequest('GET', '../request.php/dbMN90Line/?Depth='+depth + '&Duration='+duration, displayProfile);
 
 }
