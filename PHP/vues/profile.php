@@ -11,6 +11,8 @@ session_start();
   </head>
   <?php require_once("../components/header.php");?>
   <body>
+    <div id="depth" value="<?php echo $_POST['depth']?>"></div>
+    <div id="duration" value="<?php echo $_POST['duration']?>"></div>
     <div class="px-2 py-2">
         <table class="m-auto border-double border-4 border-sky-500 text-center">
             <thead>
@@ -24,7 +26,7 @@ session_start();
                 <th class="border border-slate-600 px-3 py-2">Air volume</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="table">
             <tr>
                 <td class="border border-slate-600 px-3 py-2">t0</td>
                 <td class="border border-slate-600 px-3 py-2">...</td>
