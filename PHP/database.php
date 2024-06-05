@@ -35,7 +35,7 @@
 function insertUser($db, $email, $password, $capacity_tank_l, $pressure_tank){
     $password_hash = password_hash($password, PASSWORD_DEFAULT);
     try {
-        $statement = $db->prepare('INSERT INTO public.user (email, password, capacity_tank_l, pressure_tank) SELECT :email::VARCHAR, :pwd, :cap, :pressure WHERE NOT EXISTS (SELECT 1 FROM user WHERE email=:email);');
+        $statement = $db->prepare('INSERT INTO public.user (email, password, capacity_tank_l, pressure_tank) SELECT :email::VARCHAR, :pwd, :cap, :pressure WHERE NOT EXISTS (SELECT 1 FROM public.user WHERE email=:email);');
         $statement->bindParam(':email', $email);
         $statement->bindParam(':pwd', $password_hash);
         $statement->bindParam(':cap', $capacity_tank_l);
