@@ -14,7 +14,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
     if(canConnect($db, $email, $password)){
       session_start();
       $_SESSION['email'] = $email;
-      echo '<script>window.location.href = "10.30.51.113/PHP/vues/confirmed_authentification";</script>';
+      echo '<script>window.location.href = "confirmed_authentification.php";</script>';
     }
     else{
       echo '<script>alert("Email ou mot de passe incorrect");</script>';
@@ -27,30 +27,13 @@ if(isset($_POST['email']) && isset($_POST['password'])){
 ?>
 <!DOCTYPE html>
   <head>
-    <title>My First Web Page</title>
+    <title>ProfilesPlongée.fr</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="sign_up.js" defer></script>
     <script src="ajax.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <header>
-    <nav class="bg-blue-200">
-      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div class="relative flex h-16 items-center justify-between">
-          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-          </div>
-          <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div class="flex flex-shrink-0 items-center">
-              <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
-            </div>
-          </div>
-          <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <a href="#" class="bg-blue-500 text-white rounded-md px-3 py-2 text-sm font-medium hover:bg-blue-700 rounded-md px-3 py-2 text-sm font-medium">Diving Profiles</a>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </header>
+  <?php require("../components/header.php")?>
   <body>
   <div class="bg-gray-50">
     <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">

@@ -1,5 +1,4 @@
 <?php
-  // Inscription
   if (isset($_POST['email']) && isset($_POST['password'])) {
     if (!empty($_POST['email']) && !empty($_POST['password'])) {
       require_once('../database.php');
@@ -11,7 +10,6 @@
         header('HTTP/1.1 503 Service Unavailable');
         exit;
       }
-      // test if the email is already used
       $checkEmail = getUserEmail($db, $email);
       if ($checkEmail) {
         echo '<script>alert("Email déjà utilisé");</script>';
@@ -30,7 +28,7 @@
 ?>
 <html>
   <head>
-    <title>My First Web Page</title>
+    <title>ProfilesPlongée.fr</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="sign_up.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
