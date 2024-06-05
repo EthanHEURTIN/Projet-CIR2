@@ -1,5 +1,7 @@
 <?php
+
 require_once('database.php');
+require_once('new_profile.php');
 
 $data = null;
 
@@ -24,6 +26,18 @@ if ($requestRessource == 'signing_up')
     $capacity_tank_l = 15;
     $pressure_tank = 200;
     $data = insertUser($db, $email, $password, $capacity_tank_l, $pressure_tank);
+  }
+}
+
+if ($requestRessource == 'getMN90Depth'){
+  if ($requestMethod == 'GET'){
+    $data = getMn90InfoByDepth($db, $_GET['Depth']);
+  }
+}
+
+if ($requestRessource == 'getDepth'){
+  if ($requestMethod == 'GET'){
+    $data = getDepth($db);
   }
 }
 
