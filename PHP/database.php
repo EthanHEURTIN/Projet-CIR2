@@ -71,6 +71,31 @@ function canConnect($db, $email, $password){
     }
 }
 
+  
+//////////////////
+// User profile //
+//////////////////
+
+/**
+ * Gives the default settings of an user.
+ * @return array|false
+ */
+
+function getUserSettings($db, $id){
+    try {
+        $statement = $db->prepare('SELECT capacity_tank_l, pressure_tank FROM public.user WHERE iduser=:id');
+        $statement->bindParam(':id', $id);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    } catch (PDOException $e) {
+        echo 'Request error :'.$e->getMessage();
+        return false;
+    }
+}
+
+
+
 /**
  * Get the user's email.
  * @return string|false

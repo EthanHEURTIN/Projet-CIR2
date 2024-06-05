@@ -21,11 +21,25 @@ if ($requestRessource == 'signing_up')
   {
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $capacity_tank_l = 0;
-    $pressure_tank = 0;
+    $capacity_tank_l = 15;
+    $pressure_tank = 200;
     $data = insertUser($db, $email, $password, $capacity_tank_l, $pressure_tank);
   }
 }
+
+/**
+ * Default settings user profile.
+ */
+
+if($requestRessource == "get_user_settings"){
+    if($requestMethod == 'GET'){
+        $data = getUserSettings($db, 1);
+        // if(isset($_SESSION['id'])){
+        //     $data = getUserSettings($db, 1);
+        // }
+    }
+}
+
 
 // Send result.
 if (!empty($data)) {
