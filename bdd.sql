@@ -11,12 +11,12 @@ CREATE TABLE public.tableMN90(
 	idPalier       SERIAL NOT NULL ,
 	depth_m        INT  NOT NULL ,
 	duration_min   INT  NOT NULL ,
-	15m            INT   ,
-	12m            INT  NOT NULL ,
-	9m             INT  NOT NULL ,
-	6m             INT  NOT NULL ,
-	3m             INT  NOT NULL ,
-	DTR            INT  NOT NULL  ,
+	m15            INT,
+	m12            INT,
+	m9             INT,
+	m6             INT,
+	m3             INT,
+	DTR            INT,
 	CONSTRAINT tableMN90_PK PRIMARY KEY (idPalier)
 )WITHOUT OIDS;
 

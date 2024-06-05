@@ -16,5 +16,6 @@ $("#buttonsUserProfile").on("click", "#divingProfiles", () => {
     <button type="button" id="defaultSettings" class="bg-blue-700 text-white rounded-md px-5 py-3 text-sm font-medium hover:bg-blue-500 rounded-md px-3 py-2 text-sm font-medium">Default settings</button>
     <button type="button" id="divingProfiles" class="bg-blue-200 text-blue-700 rounded-md px-5 py-3 text-sm font-medium hover:bg-blue-100 rounded-md px-3 py-2 text-sm font-medium">My diving profiles</button>
     `);
-
 });
+
+$("#capacityTankInput").val('40');
