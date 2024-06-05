@@ -1,6 +1,5 @@
 <?php 
 session_start();
-unset($refresh);
 ?>
 <!DOCTYPE html>
 <html lang="fr">

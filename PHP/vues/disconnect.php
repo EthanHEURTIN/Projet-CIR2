@@ -1,7 +1,6 @@
 <?php 
 session_start();
 session_destroy();
-unset($refresh);
  ?>
 <html>
   <head>
@@ -11,10 +10,6 @@ unset($refresh);
   </head>
   <?php 
   require("../components/header.php");
-  if(isset($refresh)){
-    echo("<meta http-equiv='refresh' content='1'>");
-    $refresh = 0;
-  }
   ?>
   <body>
     <div class="bg-gray-50">
@@ -29,7 +24,22 @@ unset($refresh);
   </body>
   <?php 
   require("../components/footer.php");
+  // Nom du cookie
+$cookie_name = "page_refreshed";
 
+// Vérifier si le cookie existe
+if(!isset($_COOKIE[$cookie_name])) {
+    // Définir le cookie avec une durée de vie de 1 minute (60 secondes)
+    setcookie($cookie_name, "yes", time() + 60);
+
+    // Ajouter un script JavaScript pour rafraîchir la page
+    echo '<script type="text/javascript">
+            window.location.reload();
+          </script>';
+} else {
+    // Le cookie existe, ne pas rafraîchir la page
+    echo "Page déjà rafraîchie une fois.";
+}
   ?>
   
 </html>
