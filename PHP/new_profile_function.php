@@ -14,3 +14,5 @@ function getDepth($conn){
     $info = $requete->fetchAll();
     return $info;
 }
+
+?>

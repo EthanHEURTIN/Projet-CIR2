@@ -1,7 +1,8 @@
 <?php
 
 require_once('database.php');
-require_once('new_profile.php');
+require_once('new_profile_function.php');
+require_once('profile_function.php');
 
 $data = null;
 
@@ -38,6 +39,12 @@ if ($requestRessource == 'getMN90Depth'){
 if ($requestRessource == 'getDepth'){
   if ($requestMethod == 'GET'){
     $data = getDepth($db);
+  }
+}
+
+if ($requestRessource == 'dbMN90Line'){
+  if ($requestMethod == 'GET'){
+    $data = dbMN90Line($db, $_GET['Depth'], $_GET['Duration']);
   }
 }
 

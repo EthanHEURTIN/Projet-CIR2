@@ -6,7 +6,7 @@ function displayMN90(reponse){
     tbody = document.getElementById('table_info');
 
     reponse.forEach(element => {
-        table += '<tr>';
+        table += '<tr class="bg-green-200">';
         table += '<td class="border border-slate-600 px-3 py-2">' + element[0] +'</td>';
         if (element[1] >= 60){
             $h = element[1] % 60;
@@ -63,6 +63,14 @@ function displayMN90(reponse){
     });
 
     select.innerHTML = options;
+
+    /* Add button to submit form */
+    box = document.getElementById('form');
+    box.innerHTML = `
+    <div class="flex items-center justify-center pb-4 py-4">
+        <button type="submit" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Get started</a>
+    </div>
+    `
 }
 
 function displayDepth(reponse){
