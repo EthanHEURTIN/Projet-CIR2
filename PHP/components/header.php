@@ -7,7 +7,7 @@
           <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div class="flex flex-shrink-0 items-center">
               <a href="../vues/index.php"><img class="h-20 w-auto" src="../../img/Logo_Plongee.png" alt="ourLogo"></a>
-              <h3>ProfilPlong&#xE9;e</h3>
+              <h3 class="text-indigo-800">ProfiliesYourDiving.fr</h3>
             </div>
           </div>
           <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
