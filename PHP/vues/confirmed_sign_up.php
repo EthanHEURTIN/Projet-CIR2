@@ -12,7 +12,8 @@
           <div class="px-4 py-5 sm:px-6">
             <h3 class="text-lg font-medium leading-6 text-gray-900">Inscription confirmée</h3>
             <p class="mt-1 max-w">Votre inscription a bien été prise en compte. Vous pouvez désormais vous connecter pour accéder aux profils de plongée et à votre historique.</p>
-            </div></div></div></div>
+            <a href="/HTML/new_profile.html" class="bg-blue-500 text-white my-5 rounded-md px-3 py-2 text-sm font-medium hover:bg-blue-700 rounded-md px-3 py-2 text-sm font-medium">S'inscrire</a>  
+          </div></div></div></div>
   </body>
   <?php require("../components/footer.php")?>
 </html>
