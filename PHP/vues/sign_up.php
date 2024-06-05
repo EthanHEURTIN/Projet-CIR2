@@ -1,3 +1,33 @@
+<?php
+  // Inscription
+  if (isset($_POST['email']) && isset($_POST['password'])) {
+    if (!empty($_POST['email']) && !empty($_POST['password'])) {
+      require_once('../database.php');
+      $data = null;
+      $email = $_POST['email'];
+      $password = $_POST['password'];
+      $db = dbConnect();
+      if (!$db) {
+        header('HTTP/1.1 503 Service Unavailable');
+        exit;
+      }
+      // test if the email is already used
+      $checkEmail = getUserEmail($db, $email);
+      if ($checkEmail) {
+        echo '<script>alert("Email déjà utilisé");</script>';
+      } else {
+        if (insertUser($db, $email, $password, 0, 0)) {
+          $_SESSION['email'] = $email;
+          header('Location: /PHP/vues/confirmed_sign_up.php');
+        } else {
+          echo '<script>alert("Erreur lors de l\'inscription");</script>';
+        }
+      }
+    } else {
+      echo '<script>alert("Veuillez remplir tous les champs");</script>';
+    }
+  }
+?>
 <html>
   <head>
     <title>My First Web Page</title>
@@ -31,7 +61,7 @@
           <h3 class="text-lg font-medium leading-6 text-gray-900">Inscription</h3>
             <p class="mt-1 max-w-2xl text-sm text-gray-500">Inscrivez-vous pour acc&#xE9;der aux profils de plong&#xE9;e et à votre historique !</p>
         </div>
-        <form id="sign_up" action="confirmed_sign_up.php" method="POST">
+        <form id="sign_up" method="POST">
             <div class="border-t border-gray-200">
             <dl>
                 <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
