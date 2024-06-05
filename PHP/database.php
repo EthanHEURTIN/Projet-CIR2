@@ -86,7 +86,7 @@ function getUserSettings($db, $id){
         $statement = $db->prepare('SELECT capacity_tank_l, pressure_tank FROM public.user WHERE iduser=:id');
         $statement->bindParam(':id', $id);
         $statement->execute();
-        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
         return $result;
     } catch (PDOException $e) {
         echo 'Request error :'.$e->getMessage();

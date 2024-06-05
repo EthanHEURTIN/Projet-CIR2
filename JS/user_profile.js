@@ -18,8 +18,8 @@ $("#buttonsUserProfile").on("click", "#divingProfiles", () => {
     `);
 });
 
-ajaxRequest('GET', '../PHP/request.php/get_user_settings', callbackiii);
+ajaxRequest('GET', '../PHP/request.php/get_user_settings', (response) => {
+    $("#capacityTankInput").val(response.capacity_tank_l);
+    $("#pressureTankInput").val(response.pressure_tank);
+});
 
-function callbackiii(response){
-    console.log(response);
-}

@@ -33,9 +33,10 @@ if ($requestRessource == 'signing_up')
 
 if($requestRessource == "get_user_settings"){
     if($requestMethod == 'GET'){
-        if(isset($_SESSION['id'])){
-            $data = getUserSettings($db, 1);
-        }
+        $data = getUserSettings($db, 1);
+        // if(isset($_SESSION['id'])){
+        //     $data = getUserSettings($db, 1);
+        // }
     }
 }
 
