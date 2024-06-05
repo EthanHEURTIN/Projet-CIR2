@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(isset($_POST['email']) && isset($_POST['password'])){
   if(!empty($_POST['email']) && !empty($_POST['password'])){
     require_once('../database.php');
@@ -12,8 +13,9 @@ if(isset($_POST['email']) && isset($_POST['password'])){
       exit;
     }
     if(canConnect($db, $email, $password)){
-      session_start();
       $_SESSION['email'] = $email;
+      var_dump($_SESSION['email']);
+      echo '<script>alert("Connexion réussie");</script>';
       echo '<script>window.location.href = "confirmed_authentification.php";</script>';
     }
     else{
