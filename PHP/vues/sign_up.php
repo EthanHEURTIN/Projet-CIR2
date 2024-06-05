@@ -18,7 +18,7 @@
       } else {
         if (insertUser($db, $email, $password, 0, 0)) {
           $_SESSION['email'] = $email;
-          header('Location: /profilplongee/PHP/vues/confirmed_sign_up.php');
+          header('Location: /PHP/vues/confirmed_sign_up.php');
         } else {
           echo '<script>alert("Erreur lors de l\'inscription");</script>';
         }
