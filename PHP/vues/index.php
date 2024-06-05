@@ -8,7 +8,7 @@
   <?php require_once("../components/header.php"); ?>
   <body>
   <div class="container mx-auto">
-    <h1 class="text-4xl text-center mt-10">Welcome to ProfilPlongee.</h1>
+    <h1 class="text-4xl text-center mt-10">Welcome to ProfilesYourDiving.fr</h1>
   </div>
   <div class="text-center">
     <a href="new_profile.php">
