@@ -3,10 +3,10 @@
     <title>ProfilesPlongée.fr</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js" defer></script>
-    <script src="../JS/profiles.js" defer></script>
+    <script src="../../JS/profiles.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <? require_once("../components/header.php");?>
+  <?php require_once("../components/header.php");?>
   <body>
     <div class="px-2 py-2">
         <table class="m-auto border-double border-4 border-sky-500 text-center">
@@ -47,5 +47,5 @@
     <div id="myPlot" class="m-auto" style="width:100%;max-width:700px"></div>
 
   </body>
-  <? require_once("../components/footer.php");?>
+  <?php require_once("../components/footer.php");?>
 </html>

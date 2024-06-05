@@ -14,7 +14,7 @@
 
         <script src="https://cdn.tailwindcss.com"></script>
       </head>
-      <? require_once("../components/header.php");?>
+      <?php require_once("../components/header.php");?>
     <body>
         <br><br><br>
         <div class="flex justify-evenly" id="buttonsUserProfile">
@@ -78,5 +78,5 @@
         </div>
 
     </body>
-    <? require_once("../components/footer.php");?>
+    <?php require_once("../components/footer.php");?>
 </html>

@@ -1,11 +1,11 @@
 <html>
   <head>
     <title>ProfilesPlongée.fr</title>
-    <script src="../JS/ajax.js" defer></script>
-    <script src="../JS/new_profile.js" defer></script>
+    <script src="../../JS/ajax.js" defer></script>
+    <script src="../../JS/new_profile.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <? require_once("../components/header.php");?>
+  <?php require_once("../components/header.php");?>
   <body>
     <div>
         <div class="mx-auto max-w-7xl py-24 sm:px-6 lg:px-8">
@@ -50,7 +50,7 @@
 
               </div>
               <div class="flex items-center justify-center pb-4 py-4">
-                <a href="profile.html">
+                <a href="profile.php">
                 <button type="button" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Get started</a>
                 </a>
               </div>
@@ -59,5 +59,5 @@
         </div>
     </div>
   </body>
-  <? require_once("../components/footer.php");?>
+  <?php require_once("../components/footer.php");?>
 </html>

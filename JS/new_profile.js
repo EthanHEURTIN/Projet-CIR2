@@ -80,12 +80,12 @@ function displayDepth(reponse){
 function getMN90ByDepth(){
 
     depth = document.getElementById('depth').value;
-    ajaxRequest('GET', "../PHP/request.php/getMN90Depth", displayMN90,"Depth=" + depth);
+    ajaxRequest('GET', "../request.php/getMN90Depth", displayMN90,"Depth=" + depth);
 
 }
 
 function getdbDepth(){
 
-    ajaxRequest('GET', "../PHP/request.php/getDepth", displayDepth);
+    ajaxRequest('GET', "../request.php/getDepth", displayDepth);
 
 }
