@@ -1,13 +1,15 @@
 <html>
   <head>
     <title>ProfilesPlongée.fr</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js" defer></script>
+    <script src="../../JS/ajax.js" defer></script>
     <script src="../../JS/profiles.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <?php require_once("../components/header.php");?>
   <body>
+    <div id="depth" value="<?php$_POST['depth']?>">
+    <div id="depth" value="<?php$_POST['duration']?>">
     <div class="px-2 py-2">
         <table class="m-auto border-double border-4 border-sky-500 text-center">
             <thead>
@@ -24,15 +26,6 @@
             <tbody>
             <tr>
                 <td class="border border-slate-600 px-3 py-2">t0</td>
-                <td class="border border-slate-600 px-3 py-2">...</td>
-                <td class="border border-slate-600 px-3 py-2">...</td>
-                <td class="border border-slate-600 px-3 py-2">...</td>
-                <td class="border border-slate-600 px-3 py-2">...</td>
-                <td class="border border-slate-600 px-3 py-2">...</td>
-                <td class="border border-slate-600 px-3 py-2">...</td>
-            </tr>
-            <tr>
-                <td class="border border-slate-600 px-3 py-2">t1</td>
                 <td class="border border-slate-600 px-3 py-2">...</td>
                 <td class="border border-slate-600 px-3 py-2">...</td>
                 <td class="border border-slate-600 px-3 py-2">...</td>
