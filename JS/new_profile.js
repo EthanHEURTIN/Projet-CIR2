@@ -97,3 +97,37 @@ function getdbDepth(){
     ajaxRequest('GET', "../request.php/getDepth", displayDepth);
 
 }
+
+
+// Fonction qui permet de vérifier si la plongée est possible selon la bouteille de la personne
+// 
+
+function checkConsommationTank(
+    /* Profondeur de la plongée : */prof, 
+    /* Durée de la plongée : */ duree,
+    /* Nombre de paliers : */ n, 
+    /* Volume total de la bouteille : */vt, 
+    /* Temps des différents paliers : */ temps_paliers){
+
+    palier = [0, 3, 6, 9, 12, 15];
+    C_tot = 0;                                                                              // Consommation totale
+    C_1 = 20 * ((prof / 20) + 1) * (15 / prof);                                             // Consommation à t_1
+    C_2 = 20 * ((prof / 10) + 1) * (duree - (15 / prof));                                   // Consommation à t_2
+    C_tot = C_1 + C_2;
+    prof_temp = prof;
+
+    for(let i = n; i >= 1; i--){
+        C_p = 20 * (((prof_temp - palier[i]) / 20) + 1) * (15 / (prof_temp - palier[i]));
+        C_l = 20 * ((palier[i] / 10) + 1) * (temps_paliers[i]);
+        C_tot = C_tot + C_p + C_l;
+        prof_temp = palier[i]; 
+    }
+
+    if(vt > C_tot + 15*20){                                                                 // Sécurité de 15 minutes pour la plongée
+        return true;
+    }
+    else {
+        return false;
+    }
+
+}
