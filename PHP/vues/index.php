@@ -9,6 +9,7 @@
   <body>
   <div class="container mx-auto">
     <h1 class="text-4xl text-center mt-10">Welcome to ProfilesYourDiving.fr</h1>
+    <h3 class="text-lg text-center mt-5 bg-indigo-800">Generate millions of diving profiles for your next diving projects.</h3>
   </div>
   <div class="text-center">
     <a href="new_profile.php">
