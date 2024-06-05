@@ -1,7 +1,7 @@
 <?php session_start();?>
 <html>
   <head>
-    <title>ProfilesPlongée.fr</title>
+    <title>ProfilesYourDiving.fr</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js" defer></script>
     <script src="../../JS/profiles.js" defer></script>

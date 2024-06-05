@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <title>ProfilesPlongée.fr</title>
+        <title>ProfilesYourDiving.fr</title>
         <!-- <link rel="stylesheet" type="text/css" href="style.css">
         <script src="script.js"></script> -->
 
