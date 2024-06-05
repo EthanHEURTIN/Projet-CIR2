@@ -70,5 +70,5 @@ session_start();
       </div>
     </div>
   </body>
-  <?php require_once("../components/footer.php");?>
+  <?php //require_once("../components/footer.php");?>
 </html>

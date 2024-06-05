@@ -57,6 +57,6 @@ function getdbMN90Line(){
 
     depth = document.getElementById("depth").getAttribute('value');
     duration = document.getElementById("duration").getAttribute('value');
-    ajaxRequest('GET', '../request.php/dbMN90Line/?Depth='+depth + '&Duration='+duration, displayProfile);
+    ajaxRequest('GET', '../request.php/dbMN90Line?Depth='+depth + '&Duration='+duration, displayProfile);
 
 }

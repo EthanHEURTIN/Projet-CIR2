@@ -44,7 +44,7 @@ if ($requestRessource == 'getDepth'){
 
 if ($requestRessource == 'dbMN90Line'){
   if ($requestMethod == 'GET'){
-    $data = dbMN90Line($db, $_GET['Depth'], $_GET['Duration'], $_SESSION['id']);
+    $data = dbMN90Line($db, $_GET['Depth'], $_GET['Duration']);
   }
 }
 
