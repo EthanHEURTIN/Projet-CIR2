@@ -20,7 +20,7 @@ session_start();
   <?php require_once("../components/header.php");?>
   <body>
     <div>
-      <div class="mx-auto max-w-7xl py-24 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl py-4 sm:px-6 lg:px-8">
         <div class="relative isolate overflow-hidden bg-blue-100 px-6 pt-8 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
           <div id="box" class="divide-y-4 divide-gray-500 mx-auto text-center lg:mx-0 lg:flex-auto">
             <h2 class="text-3xl font-bold tracking-tight text-gray-700 sm:text-4xl py-8">Generate a new profile</h2>
