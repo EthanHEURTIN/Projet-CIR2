@@ -40,6 +40,16 @@ if($requestRessource == "get_user_settings"){
     }
 }
 
+if($requestRessource == "set_user_settings"){
+    if($requestMethod == 'PUT'){
+        parse_str(file_get_contents('php://input'), $_PUT);
+        $data = setUserSettings($db, 1, $_PUT['capacity'], $_PUT['pressure']);
+        // if(isset($_SESSION['id'])){
+        //     $data = getUserSettings($db, 1);
+        // }
+    }
+}
+
 
 // Send result.
 if (!empty($data)) {

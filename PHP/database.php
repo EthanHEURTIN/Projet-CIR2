@@ -94,6 +94,24 @@ function getUserSettings($db, $id){
     }
 }
 
+/**
+ * Set the default settings of an user.
+ * @return true|false
+ */
+
+function setUserSettings($db, $id, $capacity, $pressure){
+    try {
+        $statement = $db->prepare('UPDATE public.user SET capacity_tank_l=:cap, pressure_tank=:press WHERE iduser=:id');
+        $statement->bindParam(':cap', $capacity);
+        $statement->bindParam(':press', $pressure);
+        $statement->bindParam(':id', $id);
+        $result = $statement->execute();
+        return $result;
+    } catch (PDOException $e) {
+        echo 'Request error :'.$e->getMessage();
+        return false;
+    }
+}
 
 
 /**
