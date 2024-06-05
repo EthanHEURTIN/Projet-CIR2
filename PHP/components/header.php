@@ -6,7 +6,7 @@
           </div>
           <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div class="flex flex-shrink-0 items-center">
-              <a href="index.html"><img class="h-20 w-auto" src="../../img/Logo_Plongee.png" alt="Your Company"></a>
+              <a href="index.php"><img class="h-20 w-auto" src="../../img/Logo_Plongee.png" alt="Your Company"></a>
               <h3>ProfilPlong&#xE9;e</h3>
             </div>
           </div>

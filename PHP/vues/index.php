@@ -10,7 +10,7 @@
     <h1 class="text-4xl text-center mt-10">Welcome to ProfilPlongee.</h1>
   </div>
   <div class="text-center">
-    <a href="HTML/new_profile.html">
+    <a href="new_profile.php">
     <button type="button" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Generate new profile</button>
     </a>
   </div>
