@@ -14,8 +14,8 @@
             <?php 
             if(isset($_SESSION['email'])){
               echo '<p class="text-gray-500 text-sm font-medium px-3 py-2 text-sm font-medium">Connected as '.$_SESSION['email'].'</p>';
-              echo '<a href="../vues/disconnect.php" class="bg-blue-500 text-white rounded-md px-3 py-2 text-sm font-medium hover:bg-blue-700 rounded-md px-3 py-2 text-sm font-medium">Disconnect</a>';
-              echo '<a href="../vues/user_profile.php" class="bg-blue-500 text-white rounded-md px-3 py-2 text-sm font-medium hover:bg-blue-700 rounded-md px-3 py-2 text-sm font-medium">Diving Profiles</a>';
+              echo '<a href="../vues/disconnect.php" class="bg-blue-500 text-white mx-3 rounded-md px-3 py-2 text-sm font-medium hover:bg-blue-700 rounded-md px-3 py-2 text-sm font-medium">Disconnect</a>';
+              echo '<a href="../vues/user_profile.php" class="bg-blue-500 text-white mx-3 rounded-md px-3 py-2 text-sm font-medium hover:bg-blue-700 rounded-md px-3 py-2 text-sm font-medium">Diving Profiles</a>';
             }
             else{
               echo '<a href="../vues/authentification.php" class="bg-blue-500 text-white rounded-md px-3 py-2 text-sm font-medium hover:bg-blue-700 rounded-md px-3 py-2 text-sm font-medium">Login</a>';
