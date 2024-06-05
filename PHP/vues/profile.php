@@ -4,8 +4,8 @@ session_start();
 <html>
   <head>
     <title>ProfilesYourDiving.fr</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js" defer></script>
+    <script src="../../JS/ajax.js" defer></script>
     <script src="../../JS/profiles.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
