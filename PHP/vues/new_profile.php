@@ -1,7 +1,7 @@
 <?php session_start();?>
 <html>
   <head>
-    <title>ProfilesPlongée.fr</title>
+    <title>ProfilesYourDiving.fr</title>
     <script src="../../JS/ajax.js" defer></script>
     <script src="../../JS/new_profile.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
