@@ -14,7 +14,6 @@ if(isset($_POST['email']) && isset($_POST['password'])){
     if(canConnect($db, $email, $password)){
       session_start();
       $_SESSION['email'] = $email;
-      $_SESSION['password'] = $password;
       echo '<script>window.location.href = "10.30.51.113/PHP/vues/confirmed_authentification";</script>';
     }
     else{

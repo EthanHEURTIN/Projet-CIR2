@@ -71,6 +71,23 @@ function canConnect($db, $email, $password){
     }
 }
 
+/**
+ * Get the user's email.
+ * @return string|false
+ */
+
+function getUserEmail($db, $email){
+    try {
+        $statement = $db->prepare('SELECT email FROM public.user WHERE email=:email');
+        $statement->bindParam(':email', $email);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        return $result['email'];
+    } catch (PDOException $e) {
+        error_log('Request error: '.$e->getMessage());
+        return false;
+    }
+  }
 
 
 
