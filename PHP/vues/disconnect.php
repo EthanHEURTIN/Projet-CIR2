@@ -1,6 +1,7 @@
 <?php 
 session_start();
 session_destroy();
+unset($_SESSION['email']);
  ?>
 <html>
   <head>
@@ -24,21 +25,6 @@ session_destroy();
   </body>
   <?php 
   require("../components/footer.php");
-  $cookie_name = "page_refreshed";
-
-  // Vérifier si le cookie existe
-  if(!isset($_COOKIE[$cookie_name])) {
-      // Définir le cookie avec une durée de vie de 1 minute (60 secondes)
-    setcookie($cookie_name, "yes", time() + 60);
-
-    // Ajouter un script JavaScript pour rafraîchir la page
-    echo '<script type="text/javascript">
-            window.location.reload();
-          </script>';
-  }  else {
-    // Le cookie existe, ne pas rafraîchir la page
-    echo "Page déjà rafraîchie une fois.";
-  }
   ?>
   
 </html>
