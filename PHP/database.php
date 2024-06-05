@@ -35,7 +35,7 @@
 function insertUser($db, $email, $password, $capacity_tank_l, $pressure_tank){
     $password_hash = password_hash($password, PASSWORD_DEFAULT);
     try {
-        $statement = $db->prepare('INSERT INTO user (email, password, capacity_tank_l, pressure_tank) SELECT :email::VARCHAR, :pwd, :cap, :pressure WHERE NOT EXISTS (SELECT 1 FROM user WHERE email=:email);');
+        $statement = $db->prepare('INSERT INTO public.user (email, password, capacity_tank_l, pressure_tank) SELECT :email::VARCHAR, :pwd, :cap, :pressure WHERE NOT EXISTS (SELECT 1 FROM user WHERE email=:email);');
         $statement->bindParam(':email', $email);
         $statement->bindParam(':pwd', $password_hash);
         $statement->bindParam(':cap', $capacity_tank_l);
@@ -55,7 +55,7 @@ function insertUser($db, $email, $password, $capacity_tank_l, $pressure_tank){
 
 function canConnect($db, $email, $password){
     try {
-        $statement = $db->prepare('SELECT password FROM user WHERE email=:email');
+        $statement = $db->prepare('SELECT password FROM public.user WHERE email=:email');
         $statement->bindParam(':email', $email);
         $statement->execute();
         $result = $statement->fetch(PDO::FETCH_ASSOC);
@@ -72,9 +72,27 @@ function canConnect($db, $email, $password){
 }
 
   
-/////////////
-// Profile //
-/////////////
+//////////////////
+// User profile //
+//////////////////
+
+/**
+ * Gives the default settings of an user.
+ * @return array|false
+ */
+
+function getUserSettings($db, $id){
+    try {
+        $statement = $db->prepare('SELECT capacity_tank_l, pressure_tank FROM public.user WHERE iduser=:id');
+        $statement->bindParam(':id', $id);
+        $statement->execute();
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    } catch (PDOException $e) {
+        echo 'Request error :'.$e->getMessage();
+        return false;
+    }
+}
 
 
 

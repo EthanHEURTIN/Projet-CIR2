@@ -18,4 +18,8 @@ $("#buttonsUserProfile").on("click", "#divingProfiles", () => {
     `);
 });
 
-$("#capacityTankInput").val('40');
+ajaxRequest('GET', '../PHP/request.php/get_user_settings', callbackiii);
+
+function callbackiii(response){
+    console.log(response);
+}
