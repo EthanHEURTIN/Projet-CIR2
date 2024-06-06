@@ -4,6 +4,7 @@ require_once('database.php');
 require_once('new_profile_function.php');
 require_once('profile_function.php');
 
+
 $data = null;
 
 $db = dbConnect();
