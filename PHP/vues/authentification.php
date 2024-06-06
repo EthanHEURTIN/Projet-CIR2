@@ -69,7 +69,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
           <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
             <button type="submit" class="bg-blue-500 text-white rounded-md px-3 py-2 text-sm font-medium hover:bg-blue-700 rounded-md px-3 py-2 text-sm font-medium">Login</button>
             </form>
-            <a href="/PHP/vues/sign_up.php" class="bg-blue-500 text-white my-5 rounded-md px-3 py-2 text-sm font-medium hover:bg-blue-700 rounded-md px-3 py-2 text-sm font-medium">Sign up</a>
+            <a href="sign_up.php" class="bg-blue-500 text-white my-5 rounded-md px-3 py-2 text-sm font-medium hover:bg-blue-700 rounded-md px-3 py-2 text-sm font-medium">Sign up</a>
           </div>
         </div>
     </div>
