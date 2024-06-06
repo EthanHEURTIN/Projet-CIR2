@@ -74,7 +74,6 @@ if(isset($_POST['email']) && isset($_POST['password'])){
           </div>
         </div>
     </div>
-    
   </body>
   <?php require("../components/footer.php")?>
 </html>
