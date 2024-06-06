@@ -25,7 +25,7 @@ session_start();
             <button type="button" id="divingProfiles" class="bg-blue-200 text-blue-700 rounded-md px-5 py-3 text-sm font-medium hover:bg-blue-100 rounded-md px-3 py-2 text-sm font-medium">My diving profiles</button>
         </div>
         <div id="defaultSettingsDiv" style="display: none;">
-          <div class="mx-auto max-w-7xl py-16 sm:px-6 sm:py-30 lg:px-8">
+          <div class="mx-auto max-w-7xl py-12 sm:px-6 sm:py-30 lg:px-8">
             <div class="relative isolate overflow-hidden bg-blue-100 px-6 pt-8 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
               <div class="divide-y-4 divide-gray-500 mx-auto text-center lg:mx-0 lg:flex-auto lg:py-4">
                 <div>

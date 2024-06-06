@@ -13,7 +13,7 @@
       }
       $checkEmail = getUserEmail($db, $email);
       if ($checkEmail) {
-        echo '<script>alert("Email déjà utilisé");</script>';
+        $error_connexion = 1;
       } else {
         if (insertUser($db, $email, $password, 15, 200)) {
           $_SESSION['email'] = $email;
@@ -23,7 +23,7 @@
         }
       }
     } else {
-      echo '<script>alert("Veuillez remplir tous les champs");</script>';
+      $error_connexion = 0;
     }
   }
 ?>
@@ -42,6 +42,14 @@
         <div class="px-4 py-5 sm:px-6">
           <h3 class="text-lg font-medium leading-6 text-gray-900">Registration</h3>
             <p class="mt-1 max-w-2xl text-sm text-gray-500">Register you to acceed to the features of the site !</p>
+            <?php
+            if($error_connexion == 1){
+              echo '<p class="mt-1 max-w-2xl text-sm text-red-500">Registration error, this email is already used</p>';
+            }
+            else if($error_connexion == 0){
+              echo '<p class="mt-1 max-w-2xl text-sm text-red-500">Please fill in your email and your password.</p>';
+            }
+          ?>
         </div>
         <form id="sign_up" method="POST">
             <div class="border-t border-gray-200">
