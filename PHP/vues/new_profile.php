@@ -14,17 +14,17 @@ session_start();
   </head>
   <style>
         .scrollable-div {
-            max-width: 500px; /* Largeur maximale */
+            max-width: 620px; /* Largeur maximale */
             max-height: 300px; /* Hauteur maximale */
             overflow: auto; /* Activer le scroll */
             padding: 10px; /* Espacement interne */
         }
     </style>
-  <body>
+  <body class="bg-gray-100">
     <?php require_once("../components/header.php");?>
     <div class="flex flex-col">
       <div class="relative bg-indigo-800 h-dvh w-1/2 mx-auto my-12 shadow-2xl sm:rounded-3xl md:pt-24 lg:flex lg:pt-0 basis-4/5">
-        <div id="box" class="divide-y-3 divide-white mx-auto pb-12 text-center lg:mx-0 lg:flex-auto grid-cols-1">
+        <div id="box" class="divide-y-3 divide-white mx-auto pb-12 text-center lg:mx-0 lg:flex-auto">
           <h3 class="text-4xl font-bold tracking-tight text-white py-5">Generate a new profile</h2>
           <div class="bg-white h-1 w-2/3 mx-auto"></div>
           <form action="profile.php" method="POST">
@@ -68,7 +68,7 @@ session_start();
           </form>
         </div>
       </div>
-      <div class="relative mb-0 bottom-0 inset-x-0 mt-4 w-auto basis-1/5">
+      <div class="relative mb-0 bottom-0 inset-x-0 mt-4 basis-1/5">
           <?php require_once("../components/footer.php");?>
       <div>
     </div>

@@ -37,11 +37,11 @@
 function insertUser($db, $email, $password, $capacity_tank_l, $pressure_tank){
     $password_hash = password_hash($password, PASSWORD_DEFAULT);
     try {
-        $statement = $db->prepare('INSERT INTO public.user (email, password, capacity_tank_l, pressure_tank) SELECT :email, :pwd, :cap, :pressure WHERE NOT EXISTS (SELECT 1 FROM public.user WHERE email=:email);');
+        $statement = $db->prepare('INSERT INTO public.user (email, password, capacity_tank_l, pressure_tank) VALUES (:email, :pwd, :cap, :pressure)');
         $statement->bindParam(':email', $email);
         $statement->bindParam(':pwd', $password_hash);
-        $statement->bindParam(':cap', $capacity_tank_l);
-        $statement->bindParam(':pressure', $pressure_tank);
+        $statement->bindParam(':cap', $capacity_tank_l, PDO::PARAM_INT);
+        $statement->bindParam(':pressure', $pressure_tank, PDO::PARAM_INT);
         $statement->execute();
     } catch (PDOException $exception) {
         error_log('Request error: '.$exception->getMessage());
@@ -129,7 +129,7 @@ function getUserEmail($db, $email){
         $result = $statement->fetch(PDO::FETCH_ASSOC);
         return $result['email'];
     } catch (PDOException $e) {
-        error_log('Request error: '.$e->getMessage());
+        error_log('Request error: 1 '.$e->getMessage());
         return false;
     }
 }

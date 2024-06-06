@@ -10,7 +10,7 @@ session_start();
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <?php require_once("../components/header.php");?>
-  <body>
+  <body class="bg-gray-100">
     <div id="depth" value="<?php echo $_POST['depth']?>"></div>
     <div id="duration" value="<?php echo $_POST['duration']?>"></div>
     <div class="px-2 py-2">
