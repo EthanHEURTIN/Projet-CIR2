@@ -37,8 +37,8 @@ session_start();
               </div>
               <!-- Table mn90 show depending on the depth selected -->
               <div class="scrollable-div grid-rows-1 col-span-2 row-span-3 grid-cols-subgrid col-start-2 items-center">
-                <div class="px-2 pr-0 pt-6">
-                  <table class="m-auto border-double border-4 border-sky-500 text-center">
+                <div class="">
+                  <table class="m-auto border bg-white border-rounded border-2 border-black text-center">
                       <thead>
                       <tr>
                           <th class="border border-slate-600 px-2 py-2">Depth</th>
