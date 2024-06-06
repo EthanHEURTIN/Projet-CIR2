@@ -22,7 +22,7 @@ $requestRessource = array_shift($request);
 
 if ($requestRessource == 'getMN90Depth'){
   if ($requestMethod == 'GET'){
-    $data = getMn90InfoByDepth($db, $_GET['Depth']);
+    $data = dbMN90TableDepth($db, $_GET['Depth']);
   }
 }
 

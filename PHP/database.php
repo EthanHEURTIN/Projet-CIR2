@@ -153,6 +153,34 @@ function getUserEmail($db, $email){
 }
 
 
+function dbMN90TableDepth($db, $depth){
+    $result1; $result2;
+    try {
+        $statement = $db->prepare('SELECT * FROM public.mn90 WHERE prof=:depth');
+        $statement->bindParam(':depth', $depth);
+        $statement->execute();
+        $result1 = $statement->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        error_log('Request error: '.$e->getMessage());
+        return false;
+    }
+
+    try {
+        $statement = $db->prepare('SELECT capacity_tank_l, pressure_tank FROM public.user WHERE email = :email');
+        $statement->bindParam(':email', $_SESSION['email']);
+        $statement->execute();
+        $result2 = $statement->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        error_log('Request error: '.$e->getMessage());
+        return false;
+    }
+
+    $result = array_merge($result1, $result2);
+    return $result;
+
+}
+
+// DEPRECATED
 function dbMN90Line($conn, $depth, $duration){
 
     $email = $_SESSION['email'];
@@ -178,7 +206,6 @@ function dbMN90Line($conn, $depth, $duration){
 
     $result = array_merge($info1, $info2, $info3);
     return $result;
-
 }
 
 function getMn90InfoByDepth($conn, $depth){
