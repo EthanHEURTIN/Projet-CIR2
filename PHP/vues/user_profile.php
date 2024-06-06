@@ -43,7 +43,7 @@ session_start();
 
         <div id="divingProfilesDiv" style="display: block;">
             <div class="mx-auto max-w-7xl py-16 sm:px-6 sm:py-30 lg:px-8">
-                <div style="overflow-x: hidden;overflow-y: auto;height: 300px;" class="divide-y-4 divide-gray-400 isolate bg-blue-100 shadow-2xl sm:rounded-3xl lg:px-24">
+                <div id="profileBox" style="overflow-x: hidden;overflow-y: auto;height: 300px;" class="divide-y-4 divide-gray-400 isolate bg-blue-100 shadow-2xl sm:rounded-3xl lg:px-24">
                     <div class="mx-auto text-center py-4">
                         <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Duration : 2h</span>
                         <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Depth : 5m</span>

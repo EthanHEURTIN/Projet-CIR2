@@ -152,7 +152,6 @@ function getUserEmail($db, $email){
     }
 }
 
-
 function dbMN90TableDepth($db, $depth){
     $result1; $result2;
     try {
@@ -222,6 +221,3 @@ function getDepth($conn){
     $info = $requete->fetchAll();
     return $info;
 }
-
-
-
