@@ -130,8 +130,25 @@ function getUserEmail($db, $email){
         error_log('Request error: '.$e->getMessage());
         return false;
     }
-  }
+}
 
+/**
+ * Get the user's id.
+ * @return number|false
+ */
+
+ function getUserId($db, $email){
+    try {
+        $statement = $db->prepare('SELECT id FROM public.user WHERE email=:email');
+        $statement->bindParam(':email', $email);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        return $result['id'];
+    } catch (PDOException $e) {
+        error_log('Request error: '.$e->getMessage());
+        return false;
+    }
+}
 
 
 

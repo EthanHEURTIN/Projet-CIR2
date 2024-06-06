@@ -15,9 +15,9 @@
       if ($checkEmail) {
         echo '<script>alert("Email déjà utilisé");</script>';
       } else {
-        if (insertUser($db, $email, $password, 0, 0)) {
+        if (insertUser($db, $email, $password, 15, 200)) {
           $_SESSION['email'] = $email;
-          header('Location: /PHP/vues/confirmed_sign_up.php');
+          header('Location: confirmed_sign_up.php');
         } else {
           echo '<script>alert("Erreur lors de l\'inscription");</script>';
         }

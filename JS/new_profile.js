@@ -5,8 +5,34 @@ function displayMN90(reponse){
     table = "";
     tbody = document.getElementById('table_info');
 
+    var capacity_tank_l = 0;
+    var pressure_tank = 0;
+    var number_paliers = 0;
+
+    ajaxRequest("GET", "../PHP/request.php/get_user_settings", (response) => {
+        capacity_tank_l = response.capacity_tank_l;
+        pressure_tank = response.pressure_tank;
+    });
+
     reponse.forEach(element => {
-        table += '<tr class="bg-green-200">';
+        ajaxRequest('GET', '../request.php/dbMN90Line/?Depth='+element[0] + '&Duration='+element[1], () => {
+            tableHTML = "";
+            for (let i = 0; i < 5; i++) {
+                if(reponse[i+2] != null){
+                    number_paliers++;
+                }
+            }
+        });
+        console.log(capacity_tank_l);
+        console.log(pressure_tank);
+        console.log(number_paliers);
+        if(checkConsommationTank(element[0], element[1], number_paliers, capacity_tank_l*pressure_tank, [0, element[6], element[5], element[4], element[3], element[2]])){
+            table += '<tr class="bg-green-200">';
+
+        }
+        else {
+            table += '<tr class="bg-red-200">';
+        }
         table += '<td class="border border-slate-600 px-3 py-2">' + element[0] +'</td>';
         if (element[1] >= 60){
             $h = element[1] % 60;
@@ -106,7 +132,7 @@ function checkConsommationTank(
     /* Profondeur de la plongée : */prof, 
     /* Durée de la plongée : */ duree,
     /* Nombre de paliers : */ n, 
-    /* Volume total de la bouteille : */vt, 
+    /* Volume total de la bouteille : */ vt, 
     /* Temps des différents paliers : */ temps_paliers){
 
     palier = [0, 3, 6, 9, 12, 15];
