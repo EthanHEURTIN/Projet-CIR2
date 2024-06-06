@@ -15,7 +15,7 @@ session_start();
 
         <script src="https://cdn.tailwindcss.com"></script>
       </head>
-    <body>
+    <body class="bg-gray-100">
     <?php require_once("../components/header.php");?>
       <div class="flex flex-col h-screen">
         <div class="flex justify-evenly basis-1/5" id="buttonsUserProfile">

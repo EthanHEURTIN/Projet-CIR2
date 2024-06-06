@@ -7,7 +7,7 @@ session_start();
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <?php require_once("../components/header.php"); ?>
-  <body>
+  <body class="bg-gray-100">
   <div class="container mx-auto">
     <h1 class="text-4xl text-center mt-10">Welcome to ProfilesYourDiving.fr</h1>
     <h3 class="text-xl text-center mt-5 text-indigo-800">Generate millions of diving profiles for your next diving projects.</h3>
