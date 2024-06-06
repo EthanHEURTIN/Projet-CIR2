@@ -141,17 +141,46 @@ function getUserEmail($db, $email){
 
  function getUserId($db, $email){
     try {
-        $statement = $db->prepare('SELECT id FROM public.user WHERE email=:email');
+        $statement = $db->prepare('SELECT iduser FROM public.user WHERE email=:email');
         $statement->bindParam(':email', $email);
         $statement->execute();
         $result = $statement->fetch(PDO::FETCH_ASSOC);
-        return $result['id'];
+        return $result['iduser'];
     } catch (PDOException $e) {
         error_log('Request error: '.$e->getMessage());
         return false;
     }
 }
 
+//////////////
+// Profiles //
+//////////////
+
+function insertProfile($db, $depth, $duration, $idUser){
+    try {
+        $statement = $db->prepare('INSERT INTO public.profile (duration_min, depth, iduser) SELECT :duration, :depth, :id WHERE NOT EXISTS (SELECT 1 FROM public.profile WHERE depth=:depth AND duration_min=:duration AND iduser=:id)');
+        $statement->bindParam(':duration', $duration);
+        $statement->bindParam(':depth', $depth);
+        $statement->bindParam(':id', $idUser);
+        $result = $statement->execute();
+        return $result;
+    } catch (PDOException $e) {
+        error_log('Request error: '.$e->getMessage());
+        return false;
+    }
+}
+
+
+////////////////
+// Table MN90 //
+////////////////
+
+/**
+ * Get the MN90's table with depth.
+ * @param {PDO} db - Database connection
+ * @param {int} depth - Depth of the profile
+ * @return array|false
+ */
 
 function dbMN90TableDepth($db, $depth){
     $result1; $result2;
@@ -180,7 +209,6 @@ function dbMN90TableDepth($db, $depth){
 
 }
 
-// DEPRECATED
 function dbMN90Line($conn, $depth, $duration){
 
     $email = $_SESSION['email'];

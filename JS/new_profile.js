@@ -1,8 +1,25 @@
 getdbDepth();
 
+$("#formProfile").on('submit', function(e) {
+
+    var depth = $("#depth").val();
+    var duration = $("#duration").val();
+
+    ajaxRequest("POST", "../request.php/insert_profile/", (response) => {
+        if(response){
+            console.log("Insertion !");
+        }
+        else {
+            console.log("No insertion !");
+        }
+    }, 'depth=' + depth + '&duration=' + duration);
+
+
+});
+
+
 function displayMN90(response){
 
-    console.log(response);
     tbody = document.getElementById('table_info');
     tbody.innerHTML = "";
 
@@ -30,37 +47,103 @@ function displayMN90(response){
             else {
                 table += '<tr class="bg-red-200">';
             }
-            table += '<td class="border border-slate-600 px-3 py-2">' + dataLine["prof"] +'</td>';
-            if (dataLine[1] >= 60){
-                $h = dataLine[1] % 60;
-                if($h == 0){
-                    $h = '';
+            table += '<td class="border border-slate-600 px-3 py-2">' + dataLine["prof"] +'m</td>';
+
+
+            //insertLine(dataLine["t"], table);
+            if (dataLine["t"] >= 60){
+                var h = dataLine["t"] % 60;
+                if(h == 0){
+                    h = '';
                 }
-                table += '<td class="border border-slate-600 px-3 py-2">' + Math.floor(dataLine["t"]/60) + 'h' + $h +'</td>';
+                table += '<td class="border border-slate-600 px-3 py-2">' + Math.floor(dataLine["t"]/60) + 'h' + h +'</td>';
             } else {
-                table += '<td class="border border-slate-600 px-3 py-2">' + dataLine["t"] +'m</td>';
+                table += '<td class="border border-slate-600 px-3 py-2">' + dataLine["t"] +'min</td>';
             }
             if (dataLine["m15"] == null){
                 dataLine["m15"] = 0;
+                table += '<td class="border border-slate-600 px-3 py-2"> X </td>';
             }
-            table += '<td class="border border-slate-600 px-3 py-2">' + dataLine["m15"] +'</td>';
+            else {
+                if (dataLine["m15"] >= 60){
+                    var h = dataLine["m15"] % 60;
+                    if(h == 0){
+                        h = '';
+                    }
+                    table += '<td class="border border-slate-600 px-3 py-2">' + Math.floor(dataLine["m15"]/60) + 'h' + h +'</td>';
+                } else {
+                    table += '<td class="border border-slate-600 px-3 py-2">' + dataLine["m15"] +'min</td>';
+                }
+            }
             if (dataLine["m12"] == null){
                 dataLine["m12"] = 0;
+                table += '<td class="border border-slate-600 px-3 py-2"> X </td>';
             }
-            table += '<td class="border border-slate-600 px-3 py-2">' + dataLine["m12"] +'</td>';
+            else {
+                if (dataLine["m12"] >= 60){
+                    var h = dataLine["m12"] % 60;
+                    if(h == 0){
+                        h = '';
+                    }
+                    table += '<td class="border border-slate-600 px-3 py-2">' + Math.floor(dataLine["m12"]/60) + 'h' + h +'</td>';
+                } else {
+                    table += '<td class="border border-slate-600 px-3 py-2">' + dataLine["m12"] +'min</td>';
+                }
+            }
             if (dataLine["m9"] == null){
                 dataLine["m9"] = 0;
+                table += '<td class="border border-slate-600 px-3 py-2"> X </td>';
             }
-            table += '<td class="border border-slate-600 px-3 py-2">' + dataLine["m9"] +'</td>';
+            else {
+                if (dataLine["m9"] >= 60){
+                    var h = dataLine["m9"] % 60;
+                    if(h == 0){
+                        h = '';
+                    }
+                    table += '<td class="border border-slate-600 px-3 py-2">' + Math.floor(dataLine["m9"]/60) + 'h' + h +'</td>';
+                } else {
+                    table += '<td class="border border-slate-600 px-3 py-2">' + dataLine["m9"] +'min</td>';
+                }
+            }
             if (dataLine["m6"] == null){
                 dataLine["m6"] = 0;
+                table += '<td class="border border-slate-600 px-3 py-2"> X </td>';
             }
-            table += '<td class="border border-slate-600 px-3 py-2">' + dataLine["m6"] +'</td>';
+            else {
+                if (dataLine["m6"] >= 60){
+                    var h = dataLine["m6"] % 60;
+                    if(h == 0){
+                        h = '';
+                    }
+                    table += '<td class="border border-slate-600 px-3 py-2">' + Math.floor(dataLine["m6"]/60) + 'h' + h +'</td>';
+                } else {
+                    table += '<td class="border border-slate-600 px-3 py-2">' + dataLine["m6"] +'min</td>';
+                }
+            }
             if (dataLine["m3"] == null){
                 dataLine["m3"] = 0;
+                table += '<td class="border border-slate-600 px-3 py-2"> X </td>';
             }
-            table += '<td class="border border-slate-600 px-3 py-2">' + dataLine["m3"] +'</td>';
-            table += '<td class="border border-slate-600 px-3 py-2">' + dataLine["dtr"] +'</td>';
+            else {
+                if (dataLine["m3"] >= 60){
+                    var h = dataLine["m3"] % 60;
+                    if(h == 0){
+                        h = '';
+                    }
+                    table += '<td class="border border-slate-600 px-3 py-2">' + Math.floor(dataLine["m3"]/60) + 'h' + h +'</td>';
+                } else {
+                    table += '<td class="border border-slate-600 px-3 py-2">' + dataLine["m3"] +'min</td>';
+                }
+            }
+            if (dataLine["dtr"] >= 60){
+                var h = dataLine["dtr"] % 60;
+                if(h == 0){
+                    h = '';
+                }
+                table += '<td class="border border-slate-600 px-3 py-2">' + Math.floor(dataLine["dtr"]/60) + 'h' + h +'</td>';
+            } else {
+                table += '<td class="border border-slate-600 px-3 py-2">' + dataLine["dtr"] +'min</td>';
+            }
             table += '<td class="border border-slate-600 px-3 py-2">' + dataLine["gps"] +'</td>';
     
             table += '</tr>';
@@ -86,9 +169,9 @@ function displayMN90(response){
                 if($h == 0){
                     $h = '';
                 }
-                options += '<option value="'+ dataLine["t"] +'">'+ Math.floor(dataLine["t"]/60) + 'h' + $h +'</option>';
+                options += '<option id="duration" value="'+ dataLine["t"] +'">'+ Math.floor(dataLine["t"]/60) + 'h' + $h +'</option>';
             } else {
-                options += '<option value="'+ dataLine["t"] +'">'+ dataLine["t"] +'m</option>';
+                options += '<option id="duration" value="'+ dataLine["t"] +'">'+ dataLine["t"] +'m</option>';
             }
         }
     }
@@ -103,6 +186,18 @@ function displayMN90(response){
     </div>
     `;
     
+}
+
+function insertLine(data, table){
+    if (data >= 60){
+        $h = data % 60;
+        if($h == 0){
+            $h = '';
+        }
+        table += '<td class="border border-slate-600 px-3 py-2">' + Math.floor(data/60) + 'h' + $h +'</td>';
+    } else {
+        table += '<td class="border border-slate-600 px-3 py-2">' + data +'min</td>';
+    }
 }
 
 function displayDepth(reponse){

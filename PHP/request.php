@@ -53,11 +53,24 @@ if($requestRessource == "get_user_settings"){
 if($requestRessource == "set_user_settings"){
     if($requestMethod == 'PUT'){
         parse_str(file_get_contents('php://input'), $_PUT);
-        if(isset($_SESSION['id'])){
-            $data = getUserSettings($db, $_SESSION['id']);
+        if(isset($_SESSION['email'])){
+            $data = getUserSettings($db, $_SESSION['email']);
         }
     }
 }
+
+/**
+ * Profiles
+ */
+
+if($requestRessource == "insert_profile"){
+    if($requestMethod == 'POST'){
+        if(isset($_SESSION['email']) && isset($_POST)){
+            $data = insertProfile($db, $_POST['depth'], $_POST['duration'], getUserId($db, $_SESSION['email']));
+        }
+    }
+}
+
 
 // Send result.
 if (!empty($data)) {
