@@ -11,7 +11,7 @@ unset($_SESSION['email']);
   <?php 
   require("../components/header.php");
   ?>
-  <body>
+  <body class="bg-gray-100">
     <div class="bg-gray-50">
       <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
