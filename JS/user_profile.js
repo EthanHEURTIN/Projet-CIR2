@@ -19,7 +19,7 @@ $("#buttonsUserProfile").on("click", "#divingProfiles", () => {
     `);
 });
 
-ajaxRequest('GET', '../PHP/request.php/get_user_settings', (response) => {
+ajaxRequest('GET', '../request.php/get_user_settings', (response) => {
     $("#capacityTankInput").val(response.capacity_tank_l);
     $("#pressureTankInput").val(response.pressure_tank);
 });
@@ -30,7 +30,7 @@ $("#defaultSettingsDiv").on("click", "#buttonSubmitUserSettings", (event) => {
     var capacity = $("#capacityTankInput").val();
     var pressure = $("#pressureTankInput").val();
 
-    ajaxRequest("PUT", "../PHP/request.php/set_user_settings/", (response) => {
+    ajaxRequest("PUT", "../request.php/set_user_settings/", (response) => {
         if(response){
             $("#msgConfirm").show();
         }

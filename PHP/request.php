@@ -1,8 +1,8 @@
 <?php
 
+session_start();
+
 require_once('database.php');
-require_once('new_profile_function.php');
-require_once('profile_function.php');
 
 
 $data = null;
@@ -44,9 +44,9 @@ if ($requestRessource == 'dbMN90Line'){
 
 if($requestRessource == "get_user_settings"){
     if($requestMethod == 'GET'){
-        if(isset($_SESSION['id'])){
-            $data = getUserSettings($db, $_SESSION['id']);
-        }
+      if(isset($_SESSION['email'])){
+        $data = getUserSettings($db, $_SESSION['email']);
+      }
     }
 }
 
@@ -58,7 +58,6 @@ if($requestRessource == "set_user_settings"){
         }
     }
 }
-
 
 // Send result.
 if (!empty($data)) {

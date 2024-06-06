@@ -1,5 +1,7 @@
 <?php
 
+    session_start();
+
   require_once('constants.php');
 
 /**
@@ -81,10 +83,10 @@ function canConnect($db, $email, $password){
  * @return array|false
  */
 
-function getUserSettings($db, $id){
+function getUserSettings($db, $email){
     try {
-        $statement = $db->prepare('SELECT capacity_tank_l, pressure_tank FROM public.user WHERE iduser=:id');
-        $statement->bindParam(':id', $id);
+        $statement = $db->prepare('SELECT capacity_tank_l, pressure_tank FROM public.user WHERE email=:email');
+        $statement->bindParam(':email', $email);
         $statement->execute();
         $result = $statement->fetch(PDO::FETCH_ASSOC);
         return $result;
@@ -150,6 +152,49 @@ function getUserEmail($db, $email){
     }
 }
 
+
+function dbMN90Line($conn, $depth, $duration){
+
+    $email = $_SESSION['email'];
+
+    $requete = $conn->prepare('SELECT *  FROM public.mn90 WHERE prof = :depth AND t = :duration');
+    $requete->bindParam(':depth', $depth);
+    $requete->bindParam(':duration', $duration);
+    $requete->execute();
+    $info1 = $requete->fetch(PDO::FETCH_ASSOC);
+
+    $counter = 0;
+    if($info1['m15'] != null){ $counter++; }
+    if($info1['m12'] != null){ $counter++; }
+    if($info1['m9'] != null){ $counter++; }
+    if($info1['m6'] != null){ $counter++; }
+    if($info1['m3'] != null){ $counter++; }    
+    $info3 = array('nb_paliers' => $counter);
+
+    $requete = $conn->prepare('SELECT capacity_tank_l, pressure_tank FROM public.user WHERE email = :email');
+    $requete->bindParam(':email', $email);
+    $requete->execute();
+    $info2 = $requete->fetch(PDO::FETCH_ASSOC);
+
+    $result = array_merge($info1, $info2, $info3);
+    return $result;
+
+}
+
+function getMn90InfoByDepth($conn, $depth){
+    $requete = $conn->prepare('SELECT * FROM public.mn90 WHERE prof = :depth');
+    $requete->bindParam(':depth', $depth);
+    $requete->execute();
+    $info = $requete->fetchAll();
+    return $info;
+}
+
+function getDepth($conn){
+    $requete = $conn->prepare('SELECT DISTINCT prof FROM public.mn90 ORDER BY prof');
+    $requete->execute();
+    $info = $requete->fetchAll();
+    return $info;
+}
 
 
 

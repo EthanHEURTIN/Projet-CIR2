@@ -4,7 +4,6 @@ session_start();
 <html>
   <head>
     <title>ProfilesYourDiving.fr</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <?php require_once("../components/header.php"); ?>
