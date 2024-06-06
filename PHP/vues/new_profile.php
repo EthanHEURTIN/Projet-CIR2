@@ -31,7 +31,7 @@ session_start();
                   </select>
                 </p>
                 <p class="pl-20 mt-6 mx-4 text-lg text-left leading-8 text-white grid-cols-1 grid-rows-2">Duration : 
-                  <select name="duration" id="duration" class="px-3 py-2 bg-white text-black border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
+                  <select disabled name="duration" id="duration" class="px-3 py-2 bg-white text-black border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"> 
                   </select>
                 </p>
               </div>
