@@ -12,27 +12,27 @@ session_start();
   <?php require_once("../components/header.php");?>
   <body class="bg-gray-100">
     <div id="depth" value="<?php echo $_POST['depth']?>"></div>
-    <div id="duration" value="<?php echo $_POST['duration']?>"></div>
-    <div class="px-2 py-2">
-        <table class="m-auto border-double border-4 border-sky-500 text-center">
-            <thead>
-            <tr class="bg-blue-400">
-                <th class="border border-slate-600 px-3 py-2">tX</th>
-                <th class="border border-slate-600 px-3 py-2">Depth (m)</th>
-                <th class="border border-slate-600 px-3 py-2">Time (min)</th>
-                <th class="border border-slate-600 px-3 py-2">Pressure (bar)</th>
-                <th class="border border-slate-600 px-3 py-2">Consumption (l)</th>
-                <th class="border border-slate-600 px-3 py-2">Bar left (bar)</th>
-                <th class="border border-slate-600 px-3 py-2">Air volume (l)</th>
-            </tr>
-            </thead>
-            <tbody id="table">
-            </tbody>
-        </table>
+      <div id="duration" value="<?php echo $_POST['duration']?>"></div>
+        <div class="px-2 py-16">
+            <table class="m-auto text-center">
+                <thead>
+                  <tr class="bg-blue-400">
+                      <th class="border border-slate-600 px-3 py-2">tX</th>
+                      <th class="border border-slate-600 px-3 py-2">Depth (m)</th>
+                      <th class="border border-slate-600 px-3 py-2">Time (min)</th>
+                      <th class="border border-slate-600 px-3 py-2">Pressure (bar)</th>
+                      <th class="border border-slate-600 px-3 py-2">Consumption (l)</th>
+                      <th class="border border-slate-600 px-3 py-2">Bar left (bar)</th>
+                      <th class="border border-slate-600 px-3 py-2">Air volume (l)</th>
+                  </tr>
+                </thead>
+                <tbody id="table">
+                </tbody>
+            </table>
+        </div>
+        <canvas id="profile" class="px-10 py-16"></canvas>
+      </div>
     </div>
-    
-    <canvas id="profile" class="px-10 py-10"></canvas>
-
   </body>
-  <?//php require_once("../components/footer.php");?>
+  <?php require_once("../components/footer.php");?>
 </html>
