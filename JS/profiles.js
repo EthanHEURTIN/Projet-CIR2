@@ -2,27 +2,25 @@ getdbMN90Line();
 
 function displayProfile(reponse){
 
-    let bar = reponse[1][1];
-    let airCapacity = reponse[1][0];
+    let bar = reponse['pressure_tank'];
+    let airCapacity = reponse['capacity_tank_l'];
     let airVolume = airCapacity * bar;
-    let depth = reponse[0][0];
+    let depth = reponse['prof'];
     let consumption = 0;
-    let duration = reponse[0][1];
+    let duration = reponse['t'];
     let tx = 2;
-
-    let pallierTime = 0;
-    let pallierDepth = 0;
+    let time = 0;
+    let totalTime = 0;
 
     let table = document.getElementById('table');
     let tableHTML = "";
 
-    let nb_pallier = 0;
-    for (let i = 0; i < 5; i++) {
-        if(reponse[i+2] != null){
-            nb_pallier++;
-        }
-    }
+    let palierName ="";
+    let oldPalierName ="";
+    let pallierTime = 0;
+    let pallierDepth = 0;
 
+    data = [{x: 0, y: 0}];
     
     /* T0 - T2 static */
     // t0
@@ -37,6 +35,7 @@ function displayProfile(reponse){
     tableHTML += '</tr>';
     // t1
     time = Math.round(depth/15);
+    totalTime += time;
     consumption = 20 * ((depth/2)/10 +1) * time;
     airVolume -= consumption;
     
@@ -61,8 +60,11 @@ function displayProfile(reponse){
     tableHTML += '<td class="border border-slate-600 px-3 py-2">'+ Math.round(airVolume / airCapacity) +'</td>';
     tableHTML += '<td class="border border-slate-600 px-3 py-2">'+ airVolume +'</td>';
     tableHTML += '</tr>';
+
+    data.push({x: totalTime, y: -depth});
     // t2
     time = Math.round(duration - time/15);
+    totalTime += time;
     consumption = 20 * (depth/10 +1) * time;
     airVolume -= consumption;
     
@@ -87,18 +89,24 @@ function displayProfile(reponse){
     tableHTML += '<td class="border border-slate-600 px-3 py-2">'+ Math.round(airVolume / airCapacity) +'</td>';
     tableHTML += '<td class="border border-slate-600 px-3 py-2">'+ airVolume +'</td>';
     tableHTML += '</tr>';
+    data.push({x: totalTime, y: -depth});
+
     // t3 and more...
     for (let i = 0; i < 5; i++) {
         
-        if(reponse[0][1+i] != null && i != 0){
-            pallierTime = reponse[0][2+i] - reponse[0][1+i];
-        } else {
-            pallierTime = reponse[0][2+i];
-        }
         pallierDepth = (5-i)*3;
+        if(i != 0){
+            palierName = 'm' + String(pallierDepth);
+            if(reponse[palierName] != null){
+                pallierTime = reponse[palierName] - reponse[oldPalierName];
+            }
+        } else {
+            pallierTime = reponse[palierName];
+        }
 
         if(pallierTime != null){
             time = Math.ceil((depth - pallierDepth) /15);
+            totalTime += time;
             consumption = 20 * ((depth + pallierDepth)/20 +1) * time;
             airVolume -= consumption;
             bar = ((depth + pallierDepth)/20 +1);
@@ -126,7 +134,11 @@ function displayProfile(reponse){
             tableHTML += '<td class="border border-slate-600 px-3 py-2">'+ airVolume +'</td>';
             tableHTML += '</tr>';
 
+            data.push({x: totalTime, y: -pallierDepth});
+
+            /* Time during pallier */
             time = pallierTime;
+            totalTime += time;
             consumption = 20 * (pallierDepth/10 +1) * time;
             airVolume -= consumption;
             bar = (pallierDepth/10 +1);
@@ -154,18 +166,25 @@ function displayProfile(reponse){
             tableHTML += '<td class="border border-slate-600 px-3 py-2">'+ airVolume +'</td>';
             tableHTML += '</tr>';
             depth = pallierDepth;
+
+            data.push({x: totalTime, y: -pallierDepth});
         }
+        oldPalierName = palierName;
     }
     // Tfinal
 
-    if(reponse[0][6] != null){
-        pallierTime = reponse[0][7] - reponse[0][6];
+    if(reponse[3] != 0){
+        palierName = 'dtr';
+        if(palierName != null){
+            pallierTime = reponse[palierName] - reponse[oldPalierName];
+        }
     } else {
-        pallierTime = reponse[0][7];
+        pallierTime = palierName;
     }
     pallierDepth = 0;
 
     time = Math.ceil((depth - pallierDepth) /15);
+    totalTime += time;
     consumption = 20 * ((depth + pallierDepth)/20 +1) * time;
     airVolume -= consumption;
     bar = ((depth + pallierDepth)/20 +1);
@@ -193,27 +212,37 @@ function displayProfile(reponse){
     tableHTML += '<td class="border border-slate-600 px-3 py-2">'+ airVolume +'</td>';
     tableHTML += '</tr>';
 
+    data.push({x: totalTime, y: -pallierDepth});
+
     table.innerHTML = tableHTML;
     
-    const ctx = document.getElementById('myChart');
+    const ctx = document.getElementById('profile');
 
     new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
+        type: 'line',
+        data: {
+            datasets: [{
+                label: 'profile',
+                data: data
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Profile'
+                }
+            },
+            scales: {
+                x: {
+                    type: 'linear'
+                }
+            }
         }
-      }
     });
 
 }

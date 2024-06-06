@@ -158,7 +158,7 @@ function displayMN90(response){
     
     options = "";
     select = document.getElementById('duration');
-
+    select.removeAttribute('disabled');
 
     for(let key in response){
         if(response.hasOwnProperty(key) && !isNaN(key)){
@@ -203,6 +203,7 @@ function insertLine(data, table){
 function displayDepth(reponse){
 
     options = "";
+    options += '<option disabled selected value> -- select an depth -- </option>';
     select = document.getElementById('depth');
 
     reponse.forEach(element => {

@@ -31,8 +31,8 @@ session_start();
         </table>
     </div>
     
-    <canvas id="myChart"></canvas>
+    <canvas id="profile" class="px-10 py-10"></canvas>
 
   </body>
-  <?php require_once("../components/footer.php");?>
+  <?//php require_once("../components/footer.php");?>
 </html>
