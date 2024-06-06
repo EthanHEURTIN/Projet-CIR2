@@ -11,7 +11,7 @@ session_start();
   <style>
         .scrollable-div {
             max-width: 600px; /* Largeur maximale */
-            max-height: 400px; /* Hauteur maximale */
+            max-height: 300px; /* Hauteur maximale */
             overflow: auto; /* Activer le scroll */
             border: 1px solid #ccc; /* Bordure pour visualiser la div */
             padding: 10px; /* Espacement interne */
@@ -27,11 +27,11 @@ session_start();
             <form action="profile.php" method="POST">
             <div class="grid grid-cols-3 grid-rows-3 py-5 gap-4">
               <div class="flex flex-row">
-                <p class="mt-6 text-lg text-left leading-8 text-white grid-cols-1 grid-rows-1">Depth : 
+                <p class="mt-6 mx-4 text-lg text-left leading-8 text-white grid-cols-1 grid-rows-1">Depth : 
                   <select name="depth" id="depth" onchange="getMN90ByDepth()" class="px-3 py-2 bg-white text-black border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
                   </select>
                 </p>
-                <p class="mt-6 text-lg text-left leading-8 text-white grid-cols-1 grid-rows-2">Duration : 
+                <p class="mt-6 mx-4 text-lg text-left leading-8 text-white grid-cols-1 grid-rows-2">Duration : 
                   <select name="duration" id="duration" class="px-3 py-2 bg-white text-black border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
                   </select>
                 </p>
@@ -42,15 +42,15 @@ session_start();
                   <table class="m-auto border-double border-4 border-sky-500 text-center">
                       <thead>
                       <tr>
-                          <th class="border border-slate-600 px-3 py-2">Depth</th>
-                          <th class="border border-slate-600 px-3 py-2">Time</th>
-                          <th class="border border-slate-600 px-3 py-2">15</th>
-                          <th class="border border-slate-600 px-3 py-2">12</th>
-                          <th class="border border-slate-600 px-3 py-2">9</th>
-                          <th class="border border-slate-600 px-3 py-2">6</th>
-                          <th class="border border-slate-600 px-3 py-2">3</th>
-                          <th class="border border-slate-600 px-3 py-2">TDR</th>
-                          <th class="border border-slate-600 px-3 py-2">GPS</th>
+                          <th class="border border-slate-600 px-2 py-2">Depth</th>
+                          <th class="border border-slate-600 px-2 py-2">Time</th>
+                          <th class="border border-slate-600 px-2 py-2">15</th>
+                          <th class="border border-slate-600 px-2 py-2">12</th>
+                          <th class="border border-slate-600 px-2 py-2">9</th>
+                          <th class="border border-slate-600 px-2 py-2">6</th>
+                          <th class="border border-slate-600 px-2 py-2">3</th>
+                          <th class="border border-slate-600 px-2 py-2">TDR</th>
+                          <th class="border border-slate-600 px-2 py-2">GPS</th>
                       </tr>
                       </thead>
                       <tbody id="table_info">

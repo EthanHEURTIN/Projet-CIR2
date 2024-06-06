@@ -6,7 +6,7 @@ function displayMN90(reponse){
     tbody = document.getElementById('table_info');
 
     reponse.forEach(element => {
-        table += '<tr class="bg-green-200">';
+        table += '<tr class="bg-white">';
         table += '<td class="border border-slate-600 px-3">' + element[0] +'</td>';
         if (element[1] >= 60){
             $h = element[1] % 60;

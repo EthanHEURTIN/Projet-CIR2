@@ -14,7 +14,15 @@ session_start();
     <h3 class="text-xl text-center mt-5 text-indigo-800">Generate millions of diving profiles for your next diving projects.</h3>
   </div>
   <div class="text-center">
-    <a href="new_profile.php">
+    <a href="<?php 
+    if(isset($_SESSION["email"])){
+      echo"new_profile.php";
+    }
+    else{
+      echo"authentification.php";
+    }
+    ?>
+    ">
     <button type="button" class="rounded-md bg-indigo-600 my-3 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Generate new profile</button>
     </a>
   </div>
