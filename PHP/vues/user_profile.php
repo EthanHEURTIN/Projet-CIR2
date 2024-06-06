@@ -17,15 +17,15 @@ session_start();
 
         <script src="https://cdn.tailwindcss.com"></script>
       </head>
-      <?php require_once("../components/header.php");?>
     <body>
-        <br><br><br>
-        <div class="flex justify-evenly" id="buttonsUserProfile">
-            <button type="button" id="defaultSettings" class="bg-blue-700 text-white rounded-md px-5 py-3 text-sm font-medium hover:bg-blue-500 rounded-md px-3 py-2 text-sm font-medium">Default settings</button>
-            <button type="button" id="divingProfiles" class="bg-blue-200 text-blue-700 rounded-md px-5 py-3 text-sm font-medium hover:bg-blue-100 rounded-md px-3 py-2 text-sm font-medium">My diving profiles</button>
+    <?php require_once("../components/header.php");?>
+      <div class="flex flex-col h-screen">
+        <div class="flex justify-evenly basis-1/5" id="buttonsUserProfile">
+            <button type="button" id="defaultSettings" class="bg-blue-700 text-white rounded-md my-auto px-5 py-3 text-sm font-medium hover:bg-blue-500 rounded-md px-3 py-2 text-sm font-medium">Default settings</button>
+            <button type="button" id="divingProfiles" class="bg-blue-200 text-blue-700 rounded-md my-auto px-5 py-3 text-sm font-medium hover:bg-blue-100 rounded-md px-3 py-2 text-sm font-medium">My diving profiles</button>
         </div>
-        <div id="defaultSettingsDiv" style="display: none;">
-          <div class="mx-auto max-w-7xl py-12 sm:px-6 sm:py-30 lg:px-8">
+        <div id="defaultSettingsDiv" class="basis-3/5" style="display: none;">
+          <div class="mx-auto max-w-7xl pb-12 sm:px-6 sm:py-30 lg:px-8">
             <div class="relative isolate overflow-hidden bg-blue-100 px-6 pt-8 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
               <div class="divide-y-4 divide-gray-500 mx-auto text-center lg:mx-0 lg:flex-auto lg:py-4">
                 <div>
@@ -43,8 +43,8 @@ session_start();
           </div>
         </div>
 
-        <div id="divingProfilesDiv" style="display: block;">
-            <div class="mx-auto max-w-7xl py-16 sm:px-6 sm:py-30 lg:px-8">
+        <div id="divingProfilesDiv" class="basis-3/5" style="display: block;">
+            <div class="mx-auto max-w-7xl pb-12 sm:px-6 sm:py-30 lg:px-8">
                 <div style="overflow-x: hidden;overflow-y: auto;height: 300px;" class="divide-y-4 divide-gray-400 isolate bg-blue-100 shadow-2xl sm:rounded-3xl lg:px-24">
                     <div class="mx-auto text-center py-4">
                         <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Duration : 2h</span>
@@ -73,13 +73,10 @@ session_start();
                     </div>
                 </div>
             </div>
-            <div class="text-center">
-                <a href="new_profile.php">
-                <button type="button" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Generate new profile</button>
-                </a>
-            </div>
         </div>
-
+        <div class="w-full bottom-0">
+              <?php require_once("../components/footer.php");?>
+            </div>
+      </div>
     </body>
-    <?php require_once("../components/footer.php");?>
 </html>
