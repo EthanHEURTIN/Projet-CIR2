@@ -19,7 +19,7 @@ session_start();
     <?php require_once("../components/header.php");?>
       <div class="flex flex-col h-screen">
         <div class="flex justify-evenly basis-1/5" id="buttonsUserProfile">
-            <button type="button" id="defaultSettings" class="bg-blue-700 text-white rounded-md my-auto px-5 py-3 text-sm font-medium hover:bg-blue-500 rounded-md px-3 py-2 text-sm font-medium">Default settings</button>
+            <button type="button" id="defaultSettings" class="bg-indigo-800 text-white rounded-md my-auto px-5 py-3 text-sm font-medium hover:bg-indigo-500 rounded-md px-3 py-2 text-sm font-medium">Default settings</button>
             <button type="button" id="divingProfiles" class="bg-blue-200 text-blue-700 rounded-md my-auto px-5 py-3 text-sm font-medium hover:bg-blue-100 rounded-md px-3 py-2 text-sm font-medium">My diving profiles</button>
         </div>
         <div id="defaultSettingsDiv" class="basis-3/5" style="display: none;">

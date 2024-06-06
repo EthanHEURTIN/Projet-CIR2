@@ -36,44 +36,47 @@
   </head>
   <?php require("../components/header.php")?>
   <body class="bg-gray-100">
-  <div class="bg-gray-50">
-    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-      <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-        <div class="px-4 py-5 sm:px-6">
-          <h3 class="text-lg font-medium leading-6 text-gray-900">Registration</h3>
+    <div class="flex flex-col space-y-32">
+      <div class="mx-auto pt-24 sm:px-6 lg:px-8">
+        <div class="bg-white px-12 overflow-hidden shadow-xl sm:rounded-lg">
+          <div class="px-4 py-5 sm:px-6">
+            <h3 class="text-lg font-medium leading-6 text-gray-900">Registration</h3>
             <p class="mt-1 max-w-2xl text-sm text-gray-500">Register you to acceed to the features of the site !</p>
             <?php
-            if($error_connexion == 1){
-              echo '<p class="mt-1 max-w-2xl text-sm text-red-500">Registration error, this email is already used</p>';
-            }
-            else if($error_connexion == 0){
-              echo '<p class="mt-1 max-w-2xl text-sm text-red-500">Please fill in your email and your password.</p>';
-            }
-          ?>
-        </div>
-        <form id="sign_up" method="POST">
+              if($error_connexion == 1){
+                echo '<p class="mt-1 max-w-2xl text-sm text-red-500">Registration error, this email is already used</p>';
+              }
+              else if($error_connexion == 0){
+                echo '<p class="mt-1 max-w-2xl text-sm text-red-500">Please fill in your email and your password.</p>';
+              }
+            ?>
+          </div>
+          <form id="sign_up" method="POST">
             <div class="border-t border-gray-200">
-            <dl>
-                <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">Email address</dt>
-                <dd class="mt-1 text-sm text-gray-900 sm:col-span-2">
+              <dl>
+                <div class="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dt class="text-sm font-medium text-gray-500">Email address</dt>
+                  <dd class="mt-1 text-sm text-gray-900 sm:col-span-2">
                     <input type="text" id="email" name="email" placeholder="Email" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
-                </dd>
+                  </dd>
                 </div>
                 <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">Password</dt>
-                <dd class="mt-1 text-sm text-gray-900 sm:col-span-2">
-                    <input type="password" id="password" name="password" placeholder="Mot de passe" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
-                </dd>
+                  <dt class="text-sm font-medium text-gray-500">Password</dt>
+                  <dd class="mt-1 text-sm text-gray-900 sm:col-span-2">
+                    <input type="password" id="password" name="password" placeholder="Password" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                  </dd>
                 </div>
-            </dl>
-            <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                <button type="submit" class="bg-blue-500 text-white rounded-md px-3 py-2 text-sm font-medium hover:bg-blue-700 rounded-md px-3 py-2 text-sm font-medium" onclick="confirmInscription()">Confirmer l'inscription</button>
+              </dl>
+              <div class="mt-4 px-4 py-3 text-center sm:px-6">
+                <button type="submit" class="bg-indigo-800 text-white rounded-md px-3 py-2 text-sm font-medium hover:bg-indigo-500 rounded-md px-3 py-2 text-sm font-medium" onclick="confirmInscription()">Sign up</button>
+              </div>
             </div>
-            </div>
-        </form>
-    </div>
-    
+          </form>
+        </div>
+      </div>
+      <div class="relative mb-0 bottom-0 inset-x-0 mt-4">
+        <?php require("../components/footer.php")?>
+      </div>
+    </div>  
   </body>
-  <?php require("../components/footer.php")?>
 </html>

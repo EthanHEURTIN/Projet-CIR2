@@ -43,26 +43,24 @@ session_start();
                 </div>
               </div>
               <!-- Table mn90 show depending on the depth selected -->
-              <div class="scrollable-div mx-auto">
-                <div class="">
-                  <table class="m-auto border bg-white border-radius-4 border-2 border-slate-600 text-center">
-                    <thead>
-                      <tr>
-                        <th class="border border-slate-600 px-2 py-2">Depth</th>
-                        <th class="border border-slate-600 px-2 py-2">Time</th>
-                        <th class="border border-slate-600 px-2 py-2">15</th>
-                        <th class="border border-slate-600 px-2 py-2">12</th>
-                        <th class="border border-slate-600 px-2 py-2">9</th>
-                        <th class="border border-slate-600 px-2 py-2">6</th>
-                        <th class="border border-slate-600 px-2 py-2">3</th>
-                        <th class="border border-slate-600 px-2 py-2">TDR</th>
-                        <th class="border border-slate-600 px-2 py-2">GPS</th>
-                      </tr>
-                    </thead>
-                    <tbody id="table_info">
-                    </tbody>
-                  </table>
-                </div>
+              <div id="mn90table" class="scrollable-div mx-auto" style="display:none;">
+                <table class="m-auto border bg-white border-radius-4 border-2 border-slate-600 text-center">
+                  <thead>
+                    <tr>
+                      <th class="border border-slate-600 px-2 py-2">Depth</th>
+                      <th class="border border-slate-600 px-2 py-2">Time</th>
+                      <th class="border border-slate-600 px-2 py-2">15</th>
+                      <th class="border border-slate-600 px-2 py-2">12</th>
+                      <th class="border border-slate-600 px-2 py-2">9</th>
+                      <th class="border border-slate-600 px-2 py-2">6</th>
+                      <th class="border border-slate-600 px-2 py-2">3</th>
+                      <th class="border border-slate-600 px-2 py-2">TDR</th>
+                      <th class="border border-slate-600 px-2 py-2">GPS</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table_info">
+                  </tbody>
+                </table>
               </div>
             </div>
           </form>

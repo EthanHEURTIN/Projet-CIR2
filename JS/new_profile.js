@@ -25,7 +25,6 @@ function displayMN90(response){
 
     var capacity_tank_l = response.capacity_tank_l;
     var pressure_tank = response.pressure_tank;
-
     
     for(let key in response){
         if(response.hasOwnProperty(key) && !isNaN(key)){
@@ -216,6 +215,8 @@ function displayDepth(reponse){
 function getMN90ByDepth(){
 
     depth = document.getElementById('depth').value;
+    document.getElementById('mn90table').style.display = 'block';
+    document.getElementById('mn90table').scrollTop = 0;
     ajaxRequest('GET', "../request.php/getMN90Depth", displayMN90,"Depth=" + depth);
 
 }
