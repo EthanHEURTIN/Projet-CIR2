@@ -14,7 +14,7 @@ session_start();
   </head>
   <style>
         .scrollable-div {
-            max-width: 500px; /* Largeur maximale */
+            max-width: 620px; /* Largeur maximale */
             max-height: 300px; /* Hauteur maximale */
             overflow: auto; /* Activer le scroll */
             padding: 10px; /* Espacement interne */
