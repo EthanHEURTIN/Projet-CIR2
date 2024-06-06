@@ -50,12 +50,12 @@ session_start();
                       <tr>
                         <th class="border border-slate-600 px-2 py-2">Depth</th>
                         <th class="border border-slate-600 px-2 py-2">Time</th>
-                        <th class="border border-slate-600 px-2 py-2">15</th>
-                        <th class="border border-slate-600 px-2 py-2">12</th>
-                        <th class="border border-slate-600 px-2 py-2">9</th>
-                        <th class="border border-slate-600 px-2 py-2">6</th>
-                        <th class="border border-slate-600 px-2 py-2">3</th>
-                        <th class="border border-slate-600 px-2 py-2">TDR</th>
+                        <th class="border border-slate-600 px-2 py-2">15m</th>
+                        <th class="border border-slate-600 px-2 py-2">12m</th>
+                        <th class="border border-slate-600 px-2 py-2">9m</th>
+                        <th class="border border-slate-600 px-2 py-2">6m</th>
+                        <th class="border border-slate-600 px-2 py-2">3m</th>
+                        <th class="border border-slate-600 px-2 py-2">DTR</th>
                         <th class="border border-slate-600 px-2 py-2">GPS</th>
                       </tr>
                     </thead>
