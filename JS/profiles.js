@@ -95,8 +95,8 @@ function displayProfile(reponse){
     for (let i = 0; i < 5; i++) {
         
         pallierDepth = (5-i)*3;
+        palierName = 'm' + String(pallierDepth);
         if(i != 0){
-            palierName = 'm' + String(pallierDepth);
             if(reponse[palierName] != null){
                 pallierTime = reponse[palierName] - reponse[oldPalierName];
             }
