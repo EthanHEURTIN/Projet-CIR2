@@ -4,6 +4,8 @@ function displayProfile(reponse){
 
     console.log(reponse);
 
+    console.log()
+
     table = document.getElementById('table');
     tableHTML = "";
     nb_pallier = 0;
@@ -57,6 +59,6 @@ function getdbMN90Line(){
 
     depth = document.getElementById("depth").getAttribute('value');
     duration = document.getElementById("duration").getAttribute('value');
-    ajaxRequest('GET', '../request.php/dbMN90Line?Depth='+depth + '&Duration='+duration, displayProfile);
+    ajaxRequest('GET', '../request.php/dbMN90Line', displayProfile, 'Depth='+depth + '&Duration='+duration);
 
 }

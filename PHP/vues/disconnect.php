@@ -6,7 +6,6 @@ unset($_SESSION['email']);
 <html>
   <head>
     <title>ProfilesYourDiving.fr</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <?php 
