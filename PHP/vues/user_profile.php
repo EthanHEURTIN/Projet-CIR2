@@ -43,32 +43,8 @@ session_start();
 
         <div id="divingProfilesDiv" class="basis-3/5" style="display: block;">
             <div class="mx-auto max-w-7xl pb-12 sm:px-6 sm:py-30 lg:px-8">
-                <div style="overflow-x: hidden;overflow-y: auto;height: 300px;" class="divide-y-4 divide-gray-400 isolate bg-blue-100 shadow-2xl sm:rounded-3xl lg:px-24">
-                    <div class="mx-auto text-center py-4">
-                        <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Duration : 2h</span>
-                        <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Depth : 5m</span>
-                        <button type="button" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Select Profile</button>
-                    </div>
-                    <div class="mx-auto text-center py-4">
-                        <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Duration : 2h</span>
-                        <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Depth : 5m</span>
-                        <button type="button" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Select Profile</button>
-                    </div>
-                    <div class="mx-auto text-center py-4">
-                        <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Duration : 2h</span>
-                        <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Depth : 5m</span>
-                        <button type="button" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Select Profile</button>
-                    </div>
-                    <div class="mx-auto text-center py-4">
-                        <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Duration : 2h</span>
-                        <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Depth : 5m</span>
-                        <button type="button" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Select Profile</button>
-                    </div>
-                    <div class="mx-auto text-center py-4">
-                        <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Duration : 2h</span>
-                        <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Depth : 5m</span>
-                        <button type="button" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Select Profile</button>
-                    </div>
+                <div id="divUserProfiles" style="overflow-x: hidden;overflow-y: auto;height: auto;" class="divide-y-4 divide-gray-400 isolate bg-blue-100 shadow-2xl sm:rounded-3xl lg:px-24">
+                    
                 </div>
             </div>
         </div>

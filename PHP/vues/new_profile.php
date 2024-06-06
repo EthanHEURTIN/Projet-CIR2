@@ -27,14 +27,14 @@ session_start();
         <div id="box" class="divide-y-3 divide-white mx-auto pb-12 text-center lg:mx-0 lg:flex-auto">
           <h3 class="text-4xl font-bold tracking-tight text-white py-5">Generate a new profile</h2>
           <div class="bg-white h-1 w-2/3 mx-auto"></div>
-          <form action="profile.php" method="POST">
+          <form id="formProfile" action="profile.php" method="POST">
             <div class="mx-auto">
               <div class="flex flex-row justify-center">
                 <p class="my-8 mx-8 text-lg text-left leading-8 text-white">Depth : 
                   <select name="depth" id="depth" onchange="getMN90ByDepth()" class="px-3 py-2 bg-white text-black border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
                   </select>
                 </p>
-                <p class="my-8 mx-8 text-lg text-left leading-8 text-white">Duration : 
+                <p id="durationInputValue" class="my-8 mx-8 text-lg text-left leading-8 text-white">Duration : 
                   <select name="duration" id="duration" class="px-3 py-2 bg-white text-black border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
                   </select>
                 </p>
@@ -43,7 +43,7 @@ session_start();
                 </div>
               </div>
               <!-- Table mn90 show depending on the depth selected -->
-              <div class="scrollable-div mx-auto">
+              <div id="tableMN90" class="scrollable-div mx-auto">
                 <div class="">
                   <table class="m-auto border bg-white border-radius-4 border-2 border-slate-600 text-center">
                     <thead>

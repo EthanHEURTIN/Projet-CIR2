@@ -71,6 +71,17 @@ if($requestRessource == "insert_profile"){
     }
 }
 
+if($requestRessource == "get_user_profiles"){
+    if($requestMethod == 'GET'){
+        if(isset($_SESSION['email']) && isset($_GET)){
+            $data = getUserProfiles($db, $_SESSION['email']);
+            if($data == -1){
+                $data = array("error" => "empty");
+            }
+        }
+    }
+}
+
 
 // Send result.
 if (!empty($data)) {

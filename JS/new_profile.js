@@ -1,20 +1,21 @@
-getdbDepth();
+$(document).ready(function() {
+    getdbDepth();
 
-$("#formProfile").on('submit', function(e) {
+    $("#durationInputValue").hide();
+    $("#tableMN90").hide();
 
-    var depth = $("#depth").val();
-    var duration = $("#duration").val();
+    $("#formProfile").on('submit', function(e) {
+        var depth = $("#depth").val();
+        var duration = $("#duration").val();
 
-    ajaxRequest("POST", "../request.php/insert_profile/", (response) => {
-        if(response){
-            console.log("Insertion !");
-        }
-        else {
-            console.log("No insertion !");
-        }
-    }, 'depth=' + depth + '&duration=' + duration);
-
-
+        ajaxRequest("POST", "../request.php/insert_profile/", function(response) {
+            if(response){
+                console.log("Insertion !");
+            } else {
+                console.log("No insertion !");
+            }
+        }, 'depth=' + depth + '&duration=' + duration);
+    });
 });
 
 
@@ -190,11 +191,11 @@ function displayMN90(response){
 
 function insertLine(data, table){
     if (data >= 60){
-        $h = data % 60;
-        if($h == 0){
-            $h = '';
+        var h = data % 60;
+        if(h == 0){
+            h = '';
         }
-        table += '<td class="border border-slate-600 px-3 py-2">' + Math.floor(data/60) + 'h' + $h +'</td>';
+        table += '<td class="border border-slate-600 px-3 py-2">' + Math.floor(data/60) + 'h' + h +'</td>';
     } else {
         table += '<td class="border border-slate-600 px-3 py-2">' + data +'min</td>';
     }
@@ -214,7 +215,8 @@ function displayDepth(reponse){
 }
 
 function getMN90ByDepth(){
-
+    $("#durationInputValue").show();
+    $("#tableMN90").show();
     depth = document.getElementById('depth').value;
     ajaxRequest('GET', "../request.php/getMN90Depth", displayMN90,"Depth=" + depth);
 

@@ -170,6 +170,29 @@ function insertProfile($db, $depth, $duration, $idUser){
     }
 }
 
+/**
+ * Get the user profiles.
+ * @return array|false 
+ */
+
+ function getUserProfiles($db, $email){
+    try {
+        $statement = $db->prepare('SELECT * FROM public.profile p JOIN public.user u ON p.iduser=u.iduser WHERE u.email=:email');
+        $statement->bindParam(':email', $email);
+        $statement->execute();
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        if(empty($result)){
+            return -1;
+        }
+        else {
+            return $result;
+        }
+    } catch (PDOException $e) {
+        error_log('Request error: '.$e->getMessage());
+        return false;
+    }
+ }
+
 
 ////////////////
 // Table MN90 //
