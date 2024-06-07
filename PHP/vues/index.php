@@ -17,7 +17,7 @@ session_start();
           <p class="text-center my-8">Enter the depth and the duration of your diving project and the table aside will fill up with the MN90 table informations related to your input parameters, if the line is <span class="text-green-500">GREEN</span> it means you can do it with your equipment, otherwise, if the line is <span class="text-red-500">RED</span> it means you can't do it, then you should find an equipment with a better capacity or pressure and modifiy your default settings in your user profile.</p>
         </div>
         <div class="text-right pr-96">
-          <a href="<?php if(isset($_SESSION["email"])){echo"new_profile.php";}else{echo"authentification.php";}?>">
+          <a href="<?php if(isset($_SESSION["email"])){echo"new_profile.php";}else{echo"login.php";}?>">
             <button type="button" class="rounded-md bg-indigo-800 my-3 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Generate new profile</button>
           </a>
         </div>
