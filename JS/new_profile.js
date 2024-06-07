@@ -217,8 +217,8 @@ function getMN90ByDepth(){
     $("#durationInputValue").show();
     $("#tableMN90").show();
     depth = document.getElementById('depth').value;
-    document.getElementById('mn90table').style.display = 'block';
-    document.getElementById('mn90table').scrollTop = 0;
+    document.getElementById('tableMN90').style.display = 'block';
+    document.getElementById('tableMN90').scrollTop = 0;
     ajaxRequest('GET', "../request.php/getMN90Depth", displayMN90,"Depth=" + depth);
 
 }
