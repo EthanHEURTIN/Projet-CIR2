@@ -8,7 +8,7 @@ $(document).ready(function() {
         var depth = $("#depth").val();
         var duration = $("#duration").val();
 
-        ajaxRequest("POST", "http://10.30.51.113/request.php/insert_profile/", function(response) {
+        ajaxRequest("POST", "PHP/vues/request.php/insert_profile/", function(response) {
             if(response){
                 console.log("Insertion !");
             } else {
