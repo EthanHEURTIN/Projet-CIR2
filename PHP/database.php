@@ -2,7 +2,7 @@
 
     session_start();
 
-  require_once('constants.php');
+  require_once('PHP/constants.php');
 
 /**
  * Create the connection to the database.
