@@ -9,7 +9,7 @@ unset($_SESSION['email']);
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <?php 
-  require("../components/header.php");
+  require("components/header.php");
   ?>
   <body class="bg-gray-100">
     <div class="flex flex-col space-y-32">
@@ -27,7 +27,7 @@ unset($_SESSION['email']);
         </div>
       </div>
       <div class="relative mb-0 bottom-0 inset-x-0 mt-4">
-        <?php require("../components/footer.php")?>
+        <?php require("components/footer.php")?>
       </div>
     </div>
   </body>

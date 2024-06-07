@@ -9,7 +9,7 @@ session_start();
     <script src="../../JS/profiles.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <?php require_once("../components/header.php");?>
+  <?php require_once("components/header.php");?>
   <body class="bg-gray-100">
     <div id="depth" value="<?php echo $_POST['depth']?>"></div>
       <div id="duration" value="<?php echo $_POST['duration']?>"></div>
@@ -37,5 +37,5 @@ session_start();
       </div>
     </div>
   </body>
-  <?php require_once("../components/footer.php");?>
+  <?php require_once("components/footer.php");?>
 </html>

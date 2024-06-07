@@ -34,7 +34,7 @@
     <script src="sign_up.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <?php require("../components/header.php")?>
+  <?php require("components/header.php")?>
   <body class="bg-gray-100">
     <div class="flex flex-col space-y-32">
       <div class="mx-auto pt-24 sm:px-6 lg:px-8">
@@ -75,7 +75,7 @@
         </div>
       </div>
       <div class="relative mb-0 bottom-0 inset-x-0 mt-4">
-        <?php require("../components/footer.php")?>
+        <?php require("components/footer.php")?>
       </div>
     </div>  
   </body>

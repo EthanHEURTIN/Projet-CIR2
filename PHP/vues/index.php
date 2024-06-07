@@ -6,7 +6,7 @@ session_start();
     <title>ProfilesYourDiving.fr</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <?php require_once("../components/header.php"); ?>
+  <?php require_once("components/header.php"); ?>
   <body class="bg-gray-100">
     <div class="flex flex-col space-y-24">
       <div>
@@ -23,7 +23,7 @@ session_start();
         </div>
       </div>
       <div class="relative mb-0 bottom-0 inset-x-0 mt-4 basis-1/5">
-          <?php require_once("../components/footer.php");?>
+          <?php require_once("components/footer.php");?>
       <div>
     </div>
   </body>
