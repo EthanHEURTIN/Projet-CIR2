@@ -4,3 +4,5 @@ RewriteRule ^index\.php$ PHP/vue/index.php [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . index.php [L]
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^$ /PHP/vue/index.php [L]
