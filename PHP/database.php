@@ -101,12 +101,12 @@ function getUserSettings($db, $email){
  * @return true|false
  */
 
-function setUserSettings($db, $id, $capacity, $pressure){
+function setUserSettings($db, $email, $capacity, $pressure){
     try {
-        $statement = $db->prepare('UPDATE public.user SET capacity_tank_l=:cap, pressure_tank=:press WHERE iduser=:id');
+        $statement = $db->prepare('UPDATE public.user SET capacity_tank_l=:cap, pressure_tank=:press WHERE email=:email');
         $statement->bindParam(':cap', $capacity);
         $statement->bindParam(':press', $pressure);
-        $statement->bindParam(':id', $id);
+        $statement->bindParam(':email', $email);
         $result = $statement->execute();
         return $result;
     } catch (PDOException $e) {
