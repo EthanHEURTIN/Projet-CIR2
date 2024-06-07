@@ -24,7 +24,7 @@
               echo '<a href="../vues/user_profile.php" class="bg-white text-indigo-800 mx-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-blue-200 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Diving Profiles</a>';
             }
             else{
-              echo '<a href="../vues/authentification.php" class="bg-white text-indigo-800 mx-12 rounded-md px-3 py-2 text-sm font-medium hover:bg-blue-200 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Login</a>';
+              echo '<a href="../vues/login.php" class="bg-white text-indigo-800 mx-12 rounded-md px-3 py-2 text-sm font-medium hover:bg-blue-200 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Login</a>';
             }
             ?>
           </div>
