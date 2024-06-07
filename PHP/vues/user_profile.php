@@ -18,7 +18,7 @@ session_start();
     <body class="bg-gray-100">
     <?php require_once("../components/header.php");?>
       <div class="flex flex-col h-screen">
-        <div class="flex justify-evenly py-8 basis-1/5" id="buttonsUserProfile">
+        <div class="flex justify-evenly basis-1/5 py-8" id="buttonsUserProfile">
             <button type="button" id="defaultSettings" class="bg-indigo-800 text-white rounded-md my-auto px-5 py-3 text-sm font-medium hover:bg-indigo-500 rounded-md px-3 py-2 text-sm font-medium">Default settings</button>
             <button type="button" id="divingProfiles" class="bg-blue-200 text-blue-700 rounded-md my-auto px-5 py-3 text-sm font-medium hover:bg-blue-100 rounded-md px-3 py-2 text-sm font-medium">My diving profiles</button>
         </div>
