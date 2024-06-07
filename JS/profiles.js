@@ -51,9 +51,9 @@ function displayProfile(reponse){
         if($h == 0){
             $h = '';
         }
-        tableHTML += '<td class="border border-slate-600 px-3 py-2">' + Math.floor(time/60) + 'h' + $h +'</td>';
+        tableHTML += '<td class="border border-slate-600 px-3 py-2">' + Math.floor(time/60) + ' h ' + $h +'</td>';
     } else {
-        tableHTML += '<td class="border border-slate-600 px-3 py-2">' + time +'m</td>';
+        tableHTML += '<td class="border border-slate-600 px-3 py-2">' + time +' min</td>';
     }
     tableHTML += '<td class="border border-slate-600 px-3 py-2">'+ ((depth/10+1) + 1)/2 +'</td>';
     tableHTML += '<td class="border border-slate-600 px-3 py-2">'+ consumption +'</td>';
@@ -76,13 +76,13 @@ function displayProfile(reponse){
     tableHTML += '<td class="border border-slate-600 px-3 py-2">t2</td>';
     tableHTML += '<td class="border border-slate-600 px-3 py-2">'+ depth +'</td>';
     if (time >= 60){
-        $h = time % 60;
-        if($h == 0){
-            $h = '';
+        var h = time % 60;
+        if(h == 0){
+            h = '';
         }
-        tableHTML += '<td class="border border-slate-600 px-3 py-2">' + Math.floor(time/60) + 'h' + $h +'</td>';
+        tableHTML += '<td class="border border-slate-600 px-3 py-2">' + Math.floor(time/60) + ' h ' + h +'</td>';
     } else {
-        tableHTML += '<td class="border border-slate-600 px-3 py-2">' + time +'m</td>';
+        tableHTML += '<td class="border border-slate-600 px-3 py-2">' + time +' min</td>';
     }
     tableHTML += '<td class="border border-slate-600 px-3 py-2">'+ (depth/10+1) +'</td>';
     tableHTML += '<td class="border border-slate-600 px-3 py-2">'+ consumption +'</td>';
@@ -120,13 +120,13 @@ function displayProfile(reponse){
             tableHTML += '<td class="border border-slate-600 px-3 py-2">t'+ tx +'</td>';
             tableHTML += '<td class="border border-slate-600 px-3 py-2">'+ pallierDepth +'</td>';
             if (time >= 60){
-                $h = time % 60;
-                if($h == 0){
-                    $h = '';
+                var h = time % 60;
+                if(h == 0){
+                    h = '';
                 }
-                tableHTML += '<td class="border border-slate-600 px-3 py-2">' + Math.floor(time/60) + 'h' + $h +'</td>';
+                tableHTML += '<td class="border border-slate-600 px-3 py-2">' + Math.floor(time/60) + ' h ' + h +'</td>';
             } else {
-                tableHTML += '<td class="border border-slate-600 px-3 py-2">' + time +'m</td>';
+                tableHTML += '<td class="border border-slate-600 px-3 py-2">' + time +' min</td>';
             }
             tableHTML += '<td class="border border-slate-600 px-3 py-2">'+ bar +'</td>';
             tableHTML += '<td class="border border-slate-600 px-3 py-2">'+ consumption +'</td>';
@@ -152,13 +152,13 @@ function displayProfile(reponse){
             tableHTML += '<td class="border border-slate-600 px-3 py-2">t'+ tx +'</td>';
             tableHTML += '<td class="border border-slate-600 px-3 py-2">'+ pallierDepth +'</td>';
             if (time >= 60){
-                $h = time % 60;
-                if($h == 0){
-                    $h = '';
+                var h = time % 60;
+                if(h == 0){
+                    h = '';
                 }
-                tableHTML += '<td class="border border-slate-600 px-3 py-2">' + Math.floor(time/60) + 'h' + $h +'</td>';
+                tableHTML += '<td class="border border-slate-600 px-3 py-2">' + Math.floor(time/60) + ' h ' + h +'</td>';
             } else {
-                tableHTML += '<td class="border border-slate-600 px-3 py-2">' + time +'m</td>';
+                tableHTML += '<td class="border border-slate-600 px-3 py-2">' + time +' min</td>';
             }
             tableHTML += '<td class="border border-slate-600 px-3 py-2">'+ bar +'</td>';
             tableHTML += '<td class="border border-slate-600 px-3 py-2">'+ consumption +'</td>';
@@ -204,7 +204,7 @@ function displayProfile(reponse){
         }
         tableHTML += '<td class="border border-slate-600 px-3 py-2">' + Math.floor(time/60) + 'h' + $h +'</td>';
     } else {
-        tableHTML += '<td class="border border-slate-600 px-3 py-2">' + time +'m</td>';
+        tableHTML += '<td class="border border-slate-600 px-3 py-2">' + time +' min</td>';
     }
     tableHTML += '<td class="border border-slate-600 px-3 py-2">'+ bar +'</td>';
     tableHTML += '<td class="border border-slate-600 px-3 py-2">'+ consumption +'</td>';

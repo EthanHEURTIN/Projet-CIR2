@@ -43,8 +43,8 @@ session_start();
                 </div>
               </div>
               <!-- Table mn90 show depending on the depth selected -->
-              <div id="tableMN90" class="scrollable-div mx-auto">
-                <div class="">
+              <div id="tableMN90">
+                <div class="scrollable-div mx-auto">
                   <table class="m-auto border bg-white border-radius-4 border-2 border-slate-600 text-center">
                     <thead>
                       <tr>
@@ -63,6 +63,10 @@ session_start();
                     </tbody>
                   </table>
                 </div>
+                <br><br>
+                <p class="m-auto text-left text-lg leading-8 ml-20 text-white"><a class="bg-green-200 px-2 py-2 mx-100 my-20 text-black border-2 border-inherit border-slate-600">&zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj;</a> : You can do this dive ! </p>
+                <br>
+                <p class="m-auto text-left text-lg leading-8 ml-20 text-white"><a class="bg-red-200 px-2 py-2 mx-100 my-20 text-black border-2 border-inherit border-slate-600">&zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj;</a> : You can not do this dive ! </p>
               </div>
             </div>
           </form>

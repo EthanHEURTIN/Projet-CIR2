@@ -54,7 +54,7 @@ if($requestRessource == "set_user_settings"){
     if($requestMethod == 'PUT'){
         parse_str(file_get_contents('php://input'), $_PUT);
         if(isset($_SESSION['email'])){
-            $data = getUserSettings($db, $_SESSION['email']);
+            $data = setUserSettings($db, $_SESSION['email'], $_PUT['capacity'], $_PUT['pressure']);
         }
     }
 }

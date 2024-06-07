@@ -19,11 +19,11 @@ session_start();
                   <tr class="bg-blue-400">
                       <th class="border border-slate-600 px-3 py-2">tX</th>
                       <th class="border border-slate-600 px-3 py-2">Depth (m)</th>
-                      <th class="border border-slate-600 px-3 py-2">Time (min)</th>
+                      <th class="border border-slate-600 px-3 py-2">Time</th>
                       <th class="border border-slate-600 px-3 py-2">Pressure (bar)</th>
-                      <th class="border border-slate-600 px-3 py-2">Consumption (l)</th>
+                      <th class="border border-slate-600 px-3 py-2">Consumption (L)</th>
                       <th class="border border-slate-600 px-3 py-2">Bar left (bar)</th>
-                      <th class="border border-slate-600 px-3 py-2">Air volume (l)</th>
+                      <th class="border border-slate-600 px-3 py-2">Air volume (L)</th>
                   </tr>
                 </thead>
                 <tbody id="table">
