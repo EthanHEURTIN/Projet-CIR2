@@ -8,8 +8,8 @@ session_start();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 
-    <script src="/var/www/Projet-CIR2/JS/ajax.js" defer></script>
-    <script src="/var/www/Projet-CIR2/JS/new_profile.js" defer></script>
+    <script src="../../JS/ajax.js" defer></script>
+    <script src="../../JS/new_profile.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <style>
