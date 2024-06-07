@@ -2,7 +2,7 @@ RewriteEngine On
 
 # Rediriger la racine vers PHP/vue/index.php
 RewriteCond %{REQUEST_URI} ^/$
-RewriteRule ^$ PHP/vue/index.php [L]
+RewriteRule ^$ /PHP/vue/index.php [L]
 
 # S'assurer que les autres requêtes sont traitées normalement
 RewriteCond %{REQUEST_FILENAME} !-f
