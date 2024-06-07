@@ -17,7 +17,7 @@
       } else {
         if (insertUser($db, $email, $password, 15, 200)) {
           $_SESSION['email'] = $email;
-          header('Location: confirmed_sign_up.php');
+          header('Location: sign_up_confirmation.php');
         } else {
           echo '<script>alert("Erreur lors de l\'inscription");</script>';
         }

@@ -20,7 +20,7 @@ unset($_SESSION['email']);
             <div class="bg-gray-200 h-1 w-2/3 mx-auto"></div>
             <p class="my-12 mx-8">You are now disconnected, to access your profiles or our functionality again, you can reconnect or recreate an account.</p>
             <div class="my-8">
-              <a href="authentification.php" class="bg-indigo-800 text-white rounded-md mr-8 px-3 py-2 text-sm font-medium hover:bg-indigo-500 rounded-md px-3 py-2 text-sm font-medium">Login</a>
+              <a href="login.php" class="bg-indigo-800 text-white rounded-md mr-8 px-3 py-2 text-sm font-medium hover:bg-indigo-500 rounded-md px-3 py-2 text-sm font-medium">Login</a>
               <a href="sign_up.php" class="bg-indigo-800 text-white rounded-md ml-8 px-3 py-2 text-sm font-medium hover:bg-indigo-500 rounded-md px-3 py-2 text-sm font-medium">Register</a>
             </div>
           </div>

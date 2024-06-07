@@ -15,7 +15,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
     if(canConnect($db, $email, $password)){
       $_SESSION['email'] = $email;
       $_SESSION['id'] = getUserId($db, $email);
-      echo '<script>window.location.href = "confirmed_authentification.php";</script>';
+      echo '<script>window.location.href = "login_confirmation.php";</script>';
     }
     else{
       $error_connexion = 1;
