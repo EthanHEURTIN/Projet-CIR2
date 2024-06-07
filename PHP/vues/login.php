@@ -2,7 +2,7 @@
 session_start();
 if(isset($_POST['email']) && isset($_POST['password'])){
   if(!empty($_POST['email']) && !empty($_POST['password'])){
-    require_once('../database.php');
+    require_once('database.php');
     $data = null;
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -34,7 +34,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
     <script src="ajax.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <?php require("../components/header.php")?>
+  <?php require("components/header.php")?>
   <body class="bg-gray-100">
     <div class="flex flex-col space-y-32">
       <div class="pt-24 mx-auto sm:px-6 lg:px-8">
@@ -76,7 +76,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
         </div>
       </div>
       <div class="relative mb-0 bottom-0 inset-x-0 basis-1/5">
-        <?php require("../components/footer.php")?>
+        <?php require("components/footer.php")?>
       </div>
     </div>
   </body>

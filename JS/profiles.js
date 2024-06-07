@@ -266,6 +266,8 @@ function displayProfile(reponse){
     data.push({x: totalTime, y: -pallierDepth});
 
     table.innerHTML = tableHTML;
+
+    document.getElementById("consumption").innerHTML = "<p>You need "+ consumptionArray.at(-1) +"L of air for this dive</p>"
     
     const ctx = document.getElementById('profile');
 
@@ -335,6 +337,6 @@ function getdbMN90Line(){
 
     depth = document.getElementById("depth").getAttribute('value');
     duration = document.getElementById("duration").getAttribute('value');
-    ajaxRequest('GET', '../request.php/dbMN90Line', displayProfile, 'Depth='+depth + '&Duration='+duration);
+    ajaxRequest('GET', 'PHP/vues/request.php/dbMN90Line', displayProfile, 'Depth='+depth + '&Duration='+duration);
 
 }
