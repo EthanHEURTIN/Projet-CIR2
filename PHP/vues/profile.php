@@ -33,7 +33,7 @@ session_start();
         <div class="flex justify-center">
           <div id="consumption" class="bg-blue-600 text-white mt-3 inline-flex w-full justify-center rounded-md px-3 py-2 text-sm font-semibold sm:mt-0 sm:w-auto"></div>
         </div>
-        <canvas id="profile" class="px-10 py-16"></canvas>
+        <canvas id="profile" class="px-20 py-10"></canvas>
       </div>
     </div>
   </body>
