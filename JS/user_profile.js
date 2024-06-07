@@ -1,4 +1,4 @@
-ajaxRequest('GET', 'PHP/vues/request.php/get_user_profiles', displayUserProfiles);
+ajaxRequest('GET', 'PHP/request.php/get_user_profiles', displayUserProfiles);
 
 $("#buttonsUserProfile").on("click", "#defaultSettings", () => {
     $("#defaultSettingsDiv").show();
@@ -22,11 +22,11 @@ $("#buttonsUserProfile").on("click", "#divingProfiles", () => {
     <button type="button" id="divingProfiles" class="bg-blue-200 text-blue-700 rounded-md my-auto px-5 py-3 text-sm font-medium hover:bg-blue-100 rounded-md px-3 py-2 text-sm font-medium">My diving profiles</button>
     `);
 
-    ajaxRequest('GET', 'PHP/vues/request.php/get_user_profiles', displayUserProfiles);
+    ajaxRequest('GET', 'PHP/request.php/get_user_profiles', displayUserProfiles);
 
 });
 
-ajaxRequest('GET', 'PHP/vues/request.php/get_user_settings', (response) => {
+ajaxRequest('GET', 'PHP/request.php/get_user_settings', (response) => {
     $("#capacityTankInput").val(response.capacity_tank_l);
     $("#pressureTankInput").val(response.pressure_tank);
 });
@@ -37,7 +37,7 @@ $("#defaultSettingsDiv").on("click", "#buttonSubmitUserSettings", (event) => {
     var capacity = $("#capacityTankInput").val();
     var pressure = $("#pressureTankInput").val();
 
-    ajaxRequest("PUT", ".PHP/vues/request.php/set_user_settings", (response) => {
+    ajaxRequest("PUT", ".PHP/request.php/set_user_settings", (response) => {
         if(response){
             $("#msgConfirm").show();
         }

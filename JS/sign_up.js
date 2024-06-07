@@ -39,7 +39,7 @@ function confirmInscription() {
         data[inputs[i].name] = inputs[i].value;
     }
     // requête AJAx
-    ajaxRequest('POST', 'PHP/vues/request.php/signing_up', function (response) {
+    ajaxRequest('POST', 'PHP/request.php/signing_up', function (response) {
         console.log(response);
     }, JSON.stringify(data));
 }
