@@ -193,6 +193,25 @@ function insertProfile($db, $depth, $duration, $idUser){
     }
  }
 
+/**
+ * Delete an user profile.
+ * @return true|false
+ */
+
+ function deleteUserProfile($db, $email, $depth, $duration){
+    try {
+        $statement = $db->prepare('DELETE FROM public.profile p USING public.user u WHERE u.email=:email AND p.depth=:depth AND p.duration_min=:duration');
+        $statement->bindParam(':email', $email);
+        $statement->bindParam(':depth', $depth);
+        $statement->bindParam(':duration', $duration);
+        $result = $statement->execute();
+        return $result;
+    } catch (PDOException $e) {
+        error_log('Request error: '.$e->getMessage());
+        return false;
+    }
+ }
+
 
 ////////////////
 // Table MN90 //
