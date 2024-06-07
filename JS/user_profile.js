@@ -37,7 +37,7 @@ $("#defaultSettingsDiv").on("click", "#buttonSubmitUserSettings", (event) => {
     var capacity = $("#capacityTankInput").val();
     var pressure = $("#pressureTankInput").val();
 
-    ajaxRequest("PUT", "../request.php/set_user_settings/", (response) => {
+    ajaxRequest("PUT", "../request.php/set_user_settings", (response) => {
         if(response){
             $("#msgConfirm").show();
         }
