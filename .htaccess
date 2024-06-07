@@ -4,7 +4,7 @@ RewriteEngine On
 RewriteCond %{REQUEST_URI} ^/$
 RewriteRule ^$ PHP/vues/index.php [L]
 
-# Traiter les autres requêtes
+# Réécrire les requêtes pour correspondre aux fichiers dans PHP/vues
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^/]+)$ PHP/vues/$1 [L]
+RewriteRule ^([^/]+)/([^/]+)$ PHP/vues/$1.php?action=$2 [L,QSA]
