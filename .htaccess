@@ -1,9 +1,10 @@
 RewriteEngine On
 
-# Rediriger la racine vers PHP/vue/index.php
+# Rediriger la racine vers PHP/vues/index.php
 RewriteCond %{REQUEST_URI} ^/$
-RewriteRule ^$ /PHP/vue/index.php [L]
+RewriteRule ^$ PHP/vues/index.php [L]
 
-# S'assurer que les autres requêtes sont traitées normalement
+# Traiter les autres requêtes
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)$ PHP/vues/$1 [L]
