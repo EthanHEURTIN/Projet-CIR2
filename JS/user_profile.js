@@ -60,7 +60,7 @@ function displayUserProfiles(response){
             counter++;
             console.log(elem);
             var text = `
-            <div class="mx-auto text-center py-4">
+            <div id="line" class="mx-auto text-center py-4">
             <form action="profile.php" method="POST">
             <input id="duration" name="duration" type="hidden" value="` + elem['duration_min'] + `"> 
             <input id="depth" name="depth" type="hidden" value="` + elem['depth'] + `"> 
@@ -77,7 +77,8 @@ function displayUserProfiles(response){
     
             text += `
             <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Depth : `+ elem['depth'] + `m</span>
-            <button id="buttonViewUserProfile" type="submit" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Select Profile</button>
+            <button id="buttonViewUserProfile" type="submit" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white ml-5">Select Profile</button>
+            <button id="buttonDeleteUserProfile" type="button" class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900 ml-5">Delete</button>
             </form>
             </div>
             `;
@@ -94,5 +95,21 @@ function displayUserProfiles(response){
 
     $("#divUserProfiles").html(htmlToInsert);
 
+    document.querySelectorAll("#buttonDeleteUserProfile").forEach(function(button) {
+        button.addEventListener('click', function() {
+            var inputDuration = this.closest('#line').querySelector('#duration');
+            var inputDepth = this.closest('#line').querySelector('#depth');
+    
+            ajaxRequest('DELETE', 'PHP/vues/request.php/delete_user_profile', (response) => {
+                ajaxRequest('GET', 'PHP/vues/request.php/get_user_profiles', displayUserProfiles);
+            }, "depth=" + inputDepth.value + "&duration=" + inputDuration.value);
 
+
+        });
+    
+    });
+    
 }
+
+
+

@@ -82,6 +82,15 @@ if($requestRessource == "get_user_profiles"){
     }
 }
 
+if($requestRessource == "delete_user_profile"){
+    if($requestMethod == 'DELETE'){
+        parse_str(file_get_contents('php://input'), $_DELETE);
+        if(isset($_SESSION['email'])){
+            $data = deleteUserProfile($db, $_SESSION['email'], $_DELETE['depth'], $_DELETE['duration']);
+        }
+    }
+}
+
 
 // Send result.
 if (!empty($data)) {
