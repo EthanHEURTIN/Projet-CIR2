@@ -59,7 +59,12 @@ function displayUserProfiles(response){
         response.forEach(elem => {
             counter++;
             console.log(elem);
-            var text = '<div class="mx-auto text-center py-4">';
+            var text = `
+            <div class="mx-auto text-center py-4">
+            <form action="profile.php" method="POST">
+            <input id="duration" name="duration" type="hidden" value="` + elem['duration_min'] + `"> 
+            <input id="depth" name="depth" type="hidden" value="` + elem['depth'] + `"> 
+            `;
             if (elem['duration_min'] >= 60){
                 var h = elem['duration_min'] % 60;
                 if(h == 0){
@@ -72,8 +77,10 @@ function displayUserProfiles(response){
     
             text += `
             <span class="mt-6 px-5 text-lg leading-8 text-gray-600">Depth : `+ elem['depth'] + `m</span>
-            <button id="buttonViewUserProfile" type="button" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Select Profile</button>
-            </div>`;
+            <button id="buttonViewUserProfile" type="submit" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Select Profile</button>
+            </form>
+            </div>
+            `;
             htmlToInsert += text;
         });
     }
