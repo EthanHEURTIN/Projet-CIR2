@@ -42,11 +42,10 @@ session_start();
         </div>
 
         <div id="divingProfilesDiv" class="basis-3/5" style="display: block;">
-            <div class="mx-auto max-w-7xl pb-12 sm:px-6 sm:py-30 lg:px-8">
-                <div id="divUserProfiles" style="overflow-x: hidden;overflow-y: auto;height: auto;" class="divide-y-4 divide-gray-400 isolate bg-blue-100 shadow-2xl sm:rounded-3xl lg:px-24">
-                    
-                </div>
+          <div class="mx-auto max-w-7xl pb-12 sm:px-6 sm:py-30 lg:px-8">
+            <div id="divUserProfiles" style="overflow-x: hidden;overflow-y: auto;height: auto;" class="divide-y-4 divide-gray-400 isolate bg-blue-100 shadow-2xl sm:rounded-3xl lg:px-24">
             </div>
+          </div>
         </div>
         <div class="w-full bottom-0">
               <?php require_once("../components/footer.php");?>

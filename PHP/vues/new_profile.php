@@ -72,7 +72,7 @@ session_start();
           </form>
         </div>
       </div>
-      <div class="relative mb-0 bottom-0 inset-x-0 mt-4 basis-1/5">
+      <div class="relative bottom-0 inset-x-0 mt-24 basis-1/5">
           <?php require_once("../components/footer.php");?>
       <div>
     </div>

@@ -87,7 +87,9 @@ function displayUserProfiles(response){
     
     
     if(counter == 0){
-        htmlToInsert = 'You have not any profile diving !';
+        htmlToInsert = "<div class='mx-auto pt-16 sm:px-6 lg:px-8'><div class='bg-white overflow-hidden shadow-xl sm:rounded-lg'><div class='text-center px-4 py-5 sm:px-6'><h3 class='text-lg my-6 font-medium leading-6 text-gray-900'>No diving profiles</h3><div class='bg-gray-200 h-1 w-2/3 mx-auto'></div><p class='my-8 mx-8'>You don't have any diving profiles saved for the moment, click on the button to fill the area with your first profile.</p><div class='my-8'><a href='new_profile.php' class='bg-indigo-800 text-white rounded-md px-3 py-2 text-sm font-medium hover:bg-indigo-500 rounded-md px-3 py-2 text-sm font-medium'>Go to App</a></div></div></div></div>";
+        document.getElementById("divUserProfiles").classList.remove("bg-blue-100");
+        document.getElementById("divUserProfiles").classList.remove("shadow-2xl");
     }
 
     $("#divUserProfiles").html(htmlToInsert);
