@@ -141,7 +141,7 @@ function displayProfile(reponse){
 
             if(airVolume < 0){
                 tableHTML += '<tr class="bg-red-300">';
-            } else if(bar < 50){
+            } else if(Math.round(airVolume / airCapacity) < 50){
                 tableHTML += '<tr class="bg-blue-300 text-red-600">';
             } else {
                 tableHTML += '<tr class="bg-blue-300">';
@@ -181,7 +181,7 @@ function displayProfile(reponse){
             
             if(airVolume < 0){
                 tableHTML += '<tr class="bg-red-400">';
-            } else if(bar < 50){
+            } else if(Math.round(airVolume / airCapacity) < 50){
                 tableHTML += '<tr class="bg-blue-300 text-red-600">';
             } else {
                 tableHTML += '<tr class="bg-blue-400">';
@@ -235,7 +235,7 @@ function displayProfile(reponse){
     
     if(airVolume < 0){
         tableHTML += '<tr class="bg-red-300">';
-    } else if(bar < 50){
+    } else if(Math.round(airVolume / airCapacity) < 50){
         tableHTML += '<tr class="bg-blue-300 text-red-600">';
     } else {
         tableHTML += '<tr class="bg-blue-300">';
