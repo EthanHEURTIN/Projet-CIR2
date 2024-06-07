@@ -266,6 +266,8 @@ function displayProfile(reponse){
     data.push({x: totalTime, y: -pallierDepth});
 
     table.innerHTML = tableHTML;
+
+    document.getElementById("consumption").innerHTML = "<p>You need "+ consumptionArray.at(-1) +"L of air for this dive</p>"
     
     const ctx = document.getElementById('profile');
 
