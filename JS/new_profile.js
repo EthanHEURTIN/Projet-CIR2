@@ -8,7 +8,7 @@ $(document).ready(function() {
         var depth = $("#depth").val();
         var duration = $("#duration").val();
 
-        ajaxRequest("POST", "PHP/request.php/insert_profile/", function(response) {
+        ajaxRequest("POST", "PHP/vues/request.php/insert_profile/", function(response) {
             if(response){
                 console.log("Insertion !");
             } else {
@@ -219,13 +219,13 @@ function getMN90ByDepth(){
     depth = document.getElementById('depth').value;
     document.getElementById('tableMN90').style.display = 'block';
     document.getElementById('tableMN90').scrollTop = 0;
-    ajaxRequest('GET', "PHP/request.php/getMN90Depth", displayMN90,"Depth=" + depth);
+    ajaxRequest('GET', "PHP/vues/request.php/getMN90Depth", displayMN90,"Depth=" + depth);
 
 }
 
 function getdbDepth(){
 
-    ajaxRequest('GET', "PHP/request.php/getDepth", displayDepth);
+    ajaxRequest('GET', "PHP/vues/request.php/getDepth", displayDepth);
 
 }
 

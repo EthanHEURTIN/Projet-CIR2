@@ -2,7 +2,7 @@
 session_start();
 if(isset($_POST['email']) && isset($_POST['password'])){
   if(!empty($_POST['email']) && !empty($_POST['password'])){
-    require_once('../database.php');
+    require_once('database.php');
     $data = null;
     $email = $_POST['email'];
     $password = $_POST['password'];
