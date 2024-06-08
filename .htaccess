@@ -1,10 +1,12 @@
 RewriteEngine On
+RewriteBase /workspace_php/php_tp/pfa/
 
 # Rediriger la racine vers PHP/vues/index.php
-RewriteCond %{REQUEST_URI} ^/$
-RewriteRule ^$ PHP/vues/index.php [L]
+RewriteCond %{REQUEST_URI} ^/?$
+RewriteRule ^$ PHP/vues/index.php [L,R=302]
 
-# Traiter les autres requêtes
+# Éviter les réécritures infinies en excluant les chemins déjà réécrits
+RewriteCond %{REQUEST_URI} !^/PHP/vues/ [NC]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^/]+)$ PHP/vues/$1 [L]
+RewriteRule ^(.*)$ PHP/vues/$1 [L]
