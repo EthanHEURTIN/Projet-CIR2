@@ -135,6 +135,7 @@ function displayMN90(response){
                     table += '<td class="border border-slate-600 px-3 py-2">' + dataLine["m3"] +'min</td>';
                 }
             }
+            
             if (dataLine["dtr"] >= 60){
                 var h = dataLine["dtr"] % 60;
                 if(h == 0){
@@ -177,6 +178,8 @@ function displayMN90(response){
     }
 
     select.innerHTML = options;
+
+    document.getElementById("infoBox").innerHTML = "Your current tank can store "+ capacity_tank_l +"L.<br>And can handle a pressure of "+ pressure_tank+" bar."
 
     /* Add button to submit form */
     box = document.getElementById('form');

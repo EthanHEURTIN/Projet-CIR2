@@ -64,6 +64,8 @@ session_start();
                   </table>
                 </div>
                 <br><br>
+                <p id="infoBox" class="m-auto text-left text-lg leading-8 ml-20 text-white"></p>
+                <br><br>
                 <p class="m-auto text-left text-lg leading-8 ml-20 text-white"><a class="bg-green-200 px-2 py-2 mx-100 my-20 text-black border-2 border-inherit border-slate-600">&zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj;</a> : You can do this dive with this tank ! </p>
                 <br>
                 <p class="m-auto text-left text-lg leading-8 ml-20 text-white"><a class="bg-red-200 px-2 py-2 mx-100 my-20 text-black border-2 border-inherit border-slate-600">&zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj;</a> : You can not do this dive with this tank ! </p>
