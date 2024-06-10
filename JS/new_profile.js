@@ -171,7 +171,7 @@ function displayMN90(response){
                 }
                 options += '<option id="duration" value="'+ dataLine["t"] +'">'+ Math.floor(dataLine["t"]/60) + 'h' + $h +'</option>';
             } else {
-                options += '<option id="duration" value="'+ dataLine["t"] +'">'+ dataLine["t"] +'m</option>';
+                options += '<option id="duration" value="'+ dataLine["t"] +'">'+ dataLine["t"] +'min</option>';
             }
         }
     }
@@ -254,7 +254,7 @@ function checkConsommationTank(
         prof_temp = palier[i]; 
     }
 
-    if(vt > C_tot + 15*20){                                                                 // Sécurité de 15 minutes pour la plongée
+    if(vt > C_tot){                                                                 // Sécurité de 15 minutes pour la plongée
         return true;
     }
     else {
