@@ -1,6 +1,6 @@
 # PlongeProfile
 ## Objective
-This site allows users to visualise diving profile from the table MN90.
+This is an end year project where we need to create a site that allows users to visualise diving profiles from the table MN90. We only have one week to prepper and handle a specification.
 
 ## How to use
 On the first page (index.php), you can have access to login sections or you can create a new profile.
@@ -11,12 +11,11 @@ When connected you have several things you can do:
 - Change the settings of your oxygen bottle.
 
 First we recommend you to go in your diving profiles and change default settings of your oxygen bottle. Then you can create some new profile with the "New Profile" button in the navbar.
-
+In the new profile page, you can selecting a depth within those in the table MN90. After selected the depth, a slice of the MN90 table will be displayed with different duration that you can select.
+Then you can generate the profile. You will be redirect to the profile display page, a table with several information.
+The profile is saved in your 'diving profile' section.
 
 ---
-## Version
-
-
 ## Code
 Here you will find an architecture as to how the code is organized:
 ```
@@ -49,5 +48,5 @@ Here you will find an architecture as to how the code is organized:
 │       ├── sign_up_confirmation.php    # inscription confirmation page
 │       ├── sign_up.php                 # inscription page
 │       └── user_profile.php            # page for old profile already used by 
-└── README.md
+└── README.md                           # this file
 ```
