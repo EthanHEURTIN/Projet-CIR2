@@ -85,7 +85,7 @@ if($requestRessource == "get_user_profiles"){
 if($requestRessource == "delete_user_profile"){
     if($requestMethod == 'DELETE'){
         if(isset($_SESSION['email'])){
-            $data = deleteUserProfile($db, $_SESSION['email'], $_DELETE['depth'], $_DELETE['duration']);
+            $data = deleteUserProfile($db, $_SESSION['email'], $_GET['depth'], $_GET['duration']);
         }
     }
 }
