@@ -171,7 +171,7 @@ function displayMN90(response){
                 }
                 options += '<option id="duration" value="'+ dataLine["t"] +'">'+ Math.floor(dataLine["t"]/60) + 'h' + $h +'</option>';
             } else {
-                options += '<option id="duration" value="'+ dataLine["t"] +'">'+ dataLine["t"] +'min</option>';
+                options += '<option id="duration" value="'+ dataLine["t"] +'">'+ dataLine["t"] +'hooooplaaaaadmin</option>';
             }
         }
     }
