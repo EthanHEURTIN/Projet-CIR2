@@ -100,9 +100,9 @@ function displayUserProfiles(response){
             var inputDuration = this.closest('#line').querySelector('#duration');
             var inputDepth = this.closest('#line').querySelector('#depth');
     
-            ajaxRequest('DELETE', 'PHP/vues/request.php/delete_user_profile', (response) => {
+            ajaxRequest('DELETE', 'PHP/vues/request.php/delete_user_profile/' + "depth=" + inputDepth.value + "&duration=" + inputDuration.value, (response) => {
                 ajaxRequest('GET', 'PHP/vues/request.php/get_user_profiles', displayUserProfiles);
-            }, "depth=" + inputDepth.value + "&duration=" + inputDuration.value);
+            });
 
 
         });
